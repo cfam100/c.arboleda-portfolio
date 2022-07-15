@@ -10,7 +10,7 @@ html{
 }
 .max-width{
     max-width: 1300px;
-    padding: 0 80px;
+    padding: 0 0px;
     margin:auto;
 }
 
@@ -38,6 +38,7 @@ html{
     font-size: 35px;
     font-weight: 600;
     transition: color 0.3s ease;
+    margin-left: -100px;
 }
 .navbar .logo a span{
     color: rgb(3, 39, 80);
@@ -129,6 +130,9 @@ html{
     margin:auto 0 auto 40px;
     background-size: cover;
 }
+.home-content{
+ margin-left:100px;
+}
 .home .home-content .text-1{
     font-size: 27px;
 }
@@ -172,7 +176,7 @@ html{
 .social{
     position: absolute;
     left: 200px;
-    bottom: 50px;
+    bottom: 20px;
     display: flex;
 }
 .social a{
@@ -180,7 +184,7 @@ html{
 }
 .social i{
     color: rgba(8, 14, 44);
-    font-size: 24px;
+    font-size: 30px;
 }
 .social a:hover i{
     color: brown;
@@ -392,17 +396,18 @@ section{
     position: relative;
     cursor: pointer;
 }
+.s-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.3ms;
+    /* border: 2px solid crimson; */
+    box-shadow: 2px 2px 22px crimson;
+
+}
 .s-b-container{
     display:flex;
-    flex-direction: grid;
     justify-content: center;
     align-items: center;
-}
-.s-b-container2{
-    display:flex;
-    flex-direction: grid;
-    justify-content: center;
-    align-items: center;
+    margin-top: 50px;
 }
 .s-b-img{
     width: 100%;
@@ -446,10 +451,6 @@ section{
     font-size: 18px;
     border-radius: 0px 0px 10px 10px;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-}
-.s-box:hover{
-    transform: translateY(-10px);
-    transition: all ease 0.3ms;
 }
 .s-b-text a:hover{
     color: rgb(255, 255, 255);
@@ -514,6 +515,7 @@ section{
     width: 100%;
     background: lightgrey;
     position: relative;
+    margin-top: 10px;
 }
 .skills .skills-content .right .line::before{
     content: "";
@@ -578,7 +580,7 @@ section{
     /* height: 10px; */
     min-width: 100%;
     min-height: 100vh;
-    padding: 2rem;
+    padding: 10rem;
     background-color:white;
     overflow: hidden;  
     display: flex;
@@ -587,14 +589,13 @@ section{
     z-index: 0; /*Helps to not override other divs*/
 }
 .form{
-    min-width: 100%;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  
+    grid-template-columns: repeat(2, 1fr); 
 }
 
 .contct-form{
@@ -719,7 +720,6 @@ textarea.input{
     color: transparent;
     pointer-events: none;
     z-index: 500;
-    /* background-color: red; */
 }
 
 .input-container span::before,
@@ -797,6 +797,7 @@ textarea.input{
     bottom: 65%;
     right: 50%;
     transform: translate(-40%, 38%);
+    margin: 30px 90px;
 }
 .big-circle::after{
     content: "";
@@ -845,11 +846,6 @@ textarea.input{
         top: -100px;
     }
     .s-b-container{       
-        width: 120%;
-        height: 10%;
-        margin: 1%; 
-    }
-    .s-b-container2{       
         width: 120%;
         height: 10%;
         margin: 1%; 
@@ -1007,12 +1003,6 @@ textarea.input{
         justify-content: center;
         align-items: center;
     }
-    .s-b-container2{
-        display:flex;
-        flex-direction: grid;
-        justify-content: center;
-        align-items: center;
-    }
     .containerc{  
         position: relative;
          padding: 1rem; 
@@ -1024,47 +1014,68 @@ textarea.input{
     }
 }
 @media (max-width: 480px) {
+    .navbar .logo a{
+        margin-left: -10px;
+    }
+    .menu-btn{
+        margin: 0 40px;
+    }
     .home .max-width{
         margin-left: 0px;
     }
     .home{
         display: flex;
         background-image: url("images/Arboleda.C.PNG");
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: right bottom;
+        background-size: 80%;
         height: 100vh;
     }
+    .home-content{
+        margin-left:0;
+        margin-top: -80px;
+    }
     .typing{
-        font-weight: 500;
-        position: relative;
-        font-size: 20px;
-        margin-left: 15px;
+        font-weight: 5000;
+        position: absolute;
+        font-size: 35px;
+        margin-left: -40px;
+        top: 120px;
+
     }
     .typing::after {
         content: "";
-        position: relative;
         right: -5px;
-        width: 1px;
-        height: 40%;
-        animation: blink 0.5s infinite ease;
+    }
+       .home .home-content .social{
+        position: absolute;
+        left: -8px;
+        top: -50px;
+        display: flex;
+    }
+    .home .home-content .social a:hover i{
+        color: crimson;
+        transition: all ease 0.5s;
+    }
+    .home .home-content .social a{
+        margin: -10px 8px;
+    }
+    .home .home-content .social i{
+        font-size: 25px;
     }
     .home .home-content .text-1{
-        font-size: 11px;
+        font-size: 15px;
     }
     .home .home-content .text-2{
-        font-size: 15px;      
+        font-size: 35px;      
     }
     .home .home-content .text-3{
         font-size: 20px;
     }
-
     form,
     .contct-info{
         padding: 1.7rem 1.6rem;
     }
     .text, .information, p{
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     .icon{
         width: 23px;
@@ -1082,39 +1093,51 @@ textarea.input{
         height:250px;
         width: 250px;
     }
+    .buttonb{
+        margin-top: -290px;
+        margin-left: 100px;
+        position: absolute;      
+    }
     .s-box{
-        width: 180px;
+        width: 150px;
         height: 200px;
-        margin: 20px;
+        margin: 25px;
         position: relative;
     }
     .s-b-container{
-        display:flex;
-        flex-direction: grid;
-        justify-content: center;
-        align-items: center;
+        margin: -40px;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 1px 1px;
+        margin-top: 10px;
     }
-    .s-b-container2{
-        display:flex;
-        flex-direction: grid;
-        justify-content: center;
-        align-items: center;
+    .skills-content{
+        height: 80vh;
     }
     .skills .skills-content .column{
         width: calc(100% - 10px);
+        margin-bottom: 300px;
+    }
+    .skills .skills-content .right{
+        margin-top: -250px;
+        position: relative;
     }
     .containerc{  
-       position: relative;
-        min-width: 100px;
-        min-height: 100px;
-        padding: 20rem; 
-        top: 100px;
-        z-index: 0; /*Helps to not override other divs*/
-    }
+        position: relative;
+         padding: 1rem; 
+         top: 10px;
+         z-index: 0; /*Helps to not override other divs*/
+       margin: -30px;
+     }
     .contct-info::before{
         display: none;
     }
     .big-circle{
         display: none;
+    }
+    footer{
+        background: #111;
+        padding: 20px 5px;
+        color: #f2f2f2;
     }
 }

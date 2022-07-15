@@ -5,8 +5,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-html{
+html, body{
     scroll-behavior: smooth;
+     overflow-x:hidden ;/*prevents white spaces on the sides */
 }
 .max-width{
     max-width: 1300px;
@@ -1018,7 +1019,7 @@ textarea.input{
         margin-left: -10px;
     }
     .menu-btn{
-        margin: 0 40px;
+        margin: 0 1px;
     }
     .home .max-width{
         margin-left: 0px;
@@ -1031,7 +1032,7 @@ textarea.input{
     }
     .home-content{
         margin-left:0;
-        margin-top: -80px;
+        margin-top: -100px;
     }
     .typing{
         font-weight: 5000;

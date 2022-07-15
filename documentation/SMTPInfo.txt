@@ -1,0 +1,21 @@
+Username
+cfam1997@hotmail.com
+
+Password
+72B21D638B31652D3D923CFAED7B80ED3129
+
+Server
+smtp.elasticemail.com
+
+Port
+2525
+
+Security token
+a3899275-e658-4496-be84-278f0480ea78.
+security token is 4912ffa5-77cd-49b4-a416-6d9ebf83c089
+
+
+emailsjs:
+
+Gmail Cristian
+service_7tn4uuc

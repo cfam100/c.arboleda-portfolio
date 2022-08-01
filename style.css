@@ -1162,9 +1162,9 @@ textarea.input{
     .icon{
         position: relative;
         margin-top: 1%;
-        left: 85%;      
+        left: 80%;      
         font-size: 23px;
-        margin: 205% 3%;
+        margin: 195% 3%;
     }
     .home-content{
         margin: 5% -2%;
@@ -1195,7 +1195,7 @@ textarea.input{
         display: block;
         position: relative;
         height: 100%;
-        margin: -395% 10%;
+        margin: -385% 10%;
     }
     form, .contct-info{
         padding: 10% 10%;
@@ -1217,7 +1217,7 @@ textarea.input{
         text-align: center;
     }
     .buttonb{
-        margin-top: -40%;
+        margin-top: -53%;
         padding: max(1vh, 0.7rem);
         position: absolute; 
         min-height: auto;
@@ -1254,17 +1254,24 @@ textarea.input{
         grid-gap: 1px 1px;
         margin-top: 10px;
     }
+    .skills .carousel .card {
+        padding: 10% 15%;
+    }
+    .home{
+        height: 105vh;
+
+    }
     .about{
         height: 125vh;
     }
     .projects{
-        height: 150vh;
-    }
-    .skills .carousel .card {
-        padding: 10% 15%;
-    }
+        height: 170vh;
+    } 
     .contact{
-        height: 122vh;
+        height: 130vh;
+    }
+    .skills{
+        height: 90vh;
     }
     .containerc{  
         position: relative;

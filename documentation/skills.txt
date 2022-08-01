@@ -1,0 +1,110 @@
+<div class="skills-content">
+                    <div class="column left">
+                        <div class="text">My creative skills & experiences.</div>
+                        <p>I started my development study in 2017 at ROC van Amsterdam in the netherlands,
+                            the first programming language I got envolved with was HTML and CSS. At the moment I work a lot with C# because of my work and I really like
+                            to build projects with it because C# is a OOP language, so I enjoy every challange I get. Javascript is also one of my favorites lenguages, becuase of his interaction.
+                        </p>
+                    </div>
+                    <div class="column right">
+                        <div class="bars">
+                            <div class="info">
+                                <span>HTML</span>
+                                <span>%80</span>   
+                            </div>
+                            <div class="line html"></div>
+                        </div>     
+                        <div class="bars">
+                            <div class="info">
+                                <span>CSS</span>
+                                <span>%80</span>                                
+                            </div>
+                            <div class="line css"></div>
+                        </div> 
+                        <div class="bars">
+                            <div class="info">
+                                <span>PHP</span>
+                                <span>%75</span>                               
+                            </div>
+                            <div class="line php"></div>
+                        </div>
+                        <div class="bars">
+                            <div class="info">
+                                <span>Javascript</span>
+                                <span>%70</span>                                
+                            </div>
+                            <div class="line js"></div>
+                        </div>
+                        <div class="bars">
+                            <div class="info">
+                                 <span>C#</span>
+                                 <span>%90</span>                                 
+                            </div>
+                            <div class="line csharp"></div>
+                        </div>
+                        <div class="bars">
+                            <div class="info">
+                                <span>SQL</span>
+                                <span>%75</span>
+                            </div>
+                            <div class="line mysql"></div>
+                        </div>   
+                    </div>
+                </div>
+
+CSS:
+
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills .skills-content .right .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right .span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+    margin-top: 10px;
+}
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: crimson;
+}
+
+.skills-content .right .html::before{
+    width: 80%;
+}
+.skills-content .right .css::before{
+    width: 80%;
+}
+.skills-content .right .php::before{
+    width: 75%;
+}
+.skills-content .right .js::before{
+    width: 70%;
+}
+.skills-content .right .csharp::before{
+    width: 90%;
+}
+.skills-content .right .mysql::before{
+    width: 75%;
+}

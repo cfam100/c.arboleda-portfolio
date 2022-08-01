@@ -18,7 +18,7 @@
     const toTop = document.querySelector(".scrollupbtn");
 
     window.addEventListener("scroll", () =>{
-        if (window.pageYOffset > 100) {
+        if (window.pageYOffset > 500) {
             toTop.classList.add("active");
         }
         else{
@@ -27,9 +27,9 @@
     })
 
     //Typing animation script\\
-        const texts = ["C#", "HTML", "CSS", "Javascript"];
+        const texts = ["C#", "HTML", "CSS", "Javascript", "SQL", "React", "Wordpress"];
         let count = 0;
-        let index = 0;//Checks very single char
+        let index = 0;//Checks every single char
         let currentText = "";//here gets text saved who is coming from const text
         let letter = "";
 
@@ -45,7 +45,7 @@
                 count++;
                 index = 0;
             }
-            setTimeout(type, 500);
+            setTimeout(type, 300);
         })();
         
     // toggle menu/navbar script\\
@@ -71,5 +71,27 @@
         input.addEventListener("focus", focusFunc);
         input.addEventListener("blur", blurFunc);
     })
+
+    //Owl carousel script\\
+    $('.carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive:{
+            0:{
+                items: 1,
+                nav: false
+            },
+            600:{
+                items: 2,
+                nav: false
+            },
+            1000:{
+                items: 3,
+                nav: false
+            }
+        }
+    });
 
 

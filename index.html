@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,6 +14,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> <!--Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <script src="script.js" defer></script>
     <script type="text/javascript">
         (function() {
             emailjs.init('TgV1N5p-TlXdZHyUr');
@@ -22,10 +28,11 @@
     <a href="#" class="scrollupbtn">
         <i class="fas fa-angle-up"></i>
     </button>
-
+    <!--navbar section -->
     <nav class="navbar">
-        <div class="max-width">
-            <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
+        <div class="maxwidth">
+            <!-- <div class="logo"><a href="#">Portfo<span>lio.</span></a></div> -->
+            <a href="#"><img id="logo" src="images/cfamlogo1.0.png"></a>
                  <ul class="menu">
                     <li><a href="#home" class="menu-btn">Home</a></li>
                     <li><a href="#about" class="menu-btn">About</a></li>
@@ -39,247 +46,289 @@
             </div>
         </div>
     </nav>
-    <!--home section start -->
+    <!--home section -->
     <section class="home" id="home">
-         <div class="max-width">        
-            <div class="home-content">
-                <div class= "text-1"> Hello, My name is </div>
-                <div class= "text-2">Cristian Arboleda</div>
-                <div class= "text-3">I'm a Developer who has experience with:<span class="typing"></span></div>
-                                  
-                <!-- social media -->
-                <div class="social">
-                    <a href="https://www.facebook.com/cristianfelipe.arboledamunoz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/Cristia02664458" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/cfam100/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/cristian-arboleda-b41266158/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
+        <div class="maxwidth">        
+            <div class="home-content">          
+                <div class="split">
+                    <div class= "text-1"> Hello, My name is </div>
+                    <div class= "text-2">Cristian Arboleda</div>
+                    <div class= "text-3">I'm a Developer experienced with:<span class="typing"></span></div>
+                        <!-- social media -->
+                        <div class="social">
+                            <a href="https://www.facebook.com/cristianfelipe.arboledamunoz/" target="_blank"><i class="fab fa-facebook-f icon"></i></a>
+                            <a href="https://twitter.com/Cristia02664458" target="_blank"><i class="fab fa-twitter icon"></i></a>
+                            <a href="https://www.instagram.com/cfam100/" target="_blank"><i class="fab fa-instagram icon"></i></a>
+                            <a href="https://www.linkedin.com/in/cristian-arboleda-b41266158/" target="_blank"><i class="fab fa-linkedin icon"></i></a>
+                        </div>
+                        <img src="images/bmhp2.png" alt="" class="hpimg">
+                        <img src="images/bmhp1.png" alt="" class="hpimg1">
+                </div>                  
+            </div>              
+        </div>    
     </section>
+    
     <!-- about section start -->
     <section class="about" id="about">
-        <div class="max-width">
-            <h2 class="title">About me</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img src="images/Cristian_FOTO.png" alt="">
-                </div>
-                <div class="column right">
-                    <div class="text">My name is Cristian and I'am a <span>Developer</span></div>
-                        <p>Writing code is my passion, because I can use all my creativity in this extended world of lenguages, I loved to draw and being envolved creating elements since I was a child. Now this days I do kind of the same, but in a modern way with CODE!!>.
-                        My ambition is to become a senior developer and make my own professional websites and application from scratch, for big companies. This is why I keep working on my programming skills to bring it to the next level. At the moment I work as a developer at HTM, this is a big company who works
-                        with public transport and their IT department is very wide and important. My tasks at HTM are to make changes in all the web-apps and desktop applications they have.
-                        </p>
+        <div class="maxwidth">
+            <div class="split">
+                <h2 class="title">About me</h2>
+                <div class="about-content">
+                    <div class="column left">
+                        <img src="images/cristian.jpg" alt="">
                     </div>
-
-                <button class="buttonb">
-                <a href="CV_C.Arboleda_v1.1.pdf" target="_blank"><span>Download CV</span></a>
-                </button>
+                    <div class="column right">
+                        <div class="text">Fullstack <span>Developer</span></div>
+                            <p>Writing code is my passion, because I can use all my creativity in this extended world of lenguages, I loved to draw and being envolved creating elements since I was a child. Now this days I do kind of the same, but in a modern way with CODE!!>.
+                            My ambition is to become a senior developer and make my own professional websites and application from scratch, for big companies. This is why I keep working on my programming skills to bring it to the next level. At the moment I work as a developer at HTM, this is a big company who works
+                            with public transport and their IT department is very wide and important. My tasks at HTM are to make changes in all the web-apps and desktop applications they have.
+                            </p>
+                    </div>
+                    <button class="buttonb">
+                    <a href="CV_C.Arboleda_v1.1.pdf" target="_blank"><span>Download CV</span></a>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
       <!-- projects section start -->
     <section class="projects" id="projects">
-        <div class="max-width">
-            <h2 class="title">My projects</h2>
-            <h3 class="subtitleP">Select one of my projects you want to see</h3>
-    
-            <div class="s-b-container">
-                <a href="#" target="_blank"></a>
-                    <div class="s-box">
-                        <div class="s-b-img">
-                            <div class="s-type">Tablet4U</div>
-                            <img src="images/t4you.png">
+        <div class="maxwidth">
+            <div class="split">
+                <h2 class="title">My projects</h2>
+                <h3 class="subtitle">Select one of my projects you want to see</h3>
+                <div class="s-b-container">
+                     <a href="#"> <!-- target="_blank" -->
+                        <div class="s-box">
+                            <div class="s-b-img">
+                                <div class="s-type">Tablet4U</div>
+                                <img src="images/t4you.png">
+                            </div>
+                                <div class="s-b-text">
+                                <a>My first HTML/CSS and ever made website made as a student</a>
+                            </div>
                         </div>
+                    </a>
+                    <a href="#">
+                        <div class="s-box">
+                            <div class="s-b-img">
+                                <div class="s-type">Portfolio</div>
+                                <img src="images/portfolio.png">
+                            </div>
+                                <div class="s-b-text">
+                                <a>My first Portfolio made as a student</a>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="s-box">
+                            <div class="s-b-img">
+                                <div class="s-type">YAMBA</div>
+                                <img src="images/YAMBAlogo.jpg">
+                            </div>
+                                <div class="s-b-text">
+                                <a>My best Wordpress site made as a student</a>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="s-box">
+                            <div class="s-b-img">
+                                <div class="s-type">TTT</div>
+                                <img src="images/ttt.png">
+                            </div>
+                                <div class="s-b-text">
+                                <a>My first javascipt project made as a student</a>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="s-box">
+                            <div class="s-b-img">
+                                <div class="s-type">RaceGame</div>
+                                <img src="images/race.jpg">
+                            </div>
+                                <div class="s-b-text">
+                                <a>My first C# game project made as a student</a>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="s-box">
+                            <div class="s-b-img">
+                                <div class="s-type">TextEditor</div>
+                                <img src="images/texteditor.jpg">
+                            </div>
                             <div class="s-b-text">
-                            <a>My first HTML/CSS and ever made website made as a student</a>
+                                <a>This Text Editor is a desktop application created with C#</a>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="s-box">
-                        <div class="s-b-img">
-                            <div class="s-type">Portfolio</div>
-                            <img src="images/portfolio.png">
-                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="s-box">
+                            <div class="s-b-img">
+                                <div class="s-type">System</div>
+                                <img src="images/texteditor.jpg">
+                            </div>
                             <div class="s-b-text">
-                            <a>My first Portfolio made as a student</a>
+                                <a>This Text Editor is a desktop application created with C#</a>
+                            </div>
                         </div>
-                    </div>
-                </a> 
-                <a href="#">
-                    <div class="s-box">
-                        <div class="s-b-img">
-                            <div class="s-type">YAMBA</div>
-                            <img src="images/YAMBAlogo.jpg">
-                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="s-box">
+                            <div class="s-b-img">
+                                <div class="s-type">TextEditor</div>
+                                <img src="images/texteditor.jpg">
+                            </div>
                             <div class="s-b-text">
-                            <a>My best Wordpress site made as a student</a>
+                                <a>This Text Editor is a desktop application created with C#</a>
+                            </div>
                         </div>
-                    </div>
-                </a>           
-                <a href="#">
-                    <div class="s-box">
-                        <div class="s-b-img">
-                            <div class="s-type">Tic Tac Toe</div>
-                            <img src="images/ttt.png">
-                        </div>
-                            <div class="s-b-text">
-                            <a>My first javascipt project made as a student</a>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="s-box">
-                        <div class="s-b-img">
-                            <div class="s-type">RaceGame</div>
-                            <img src="images/race.jpg">
-                        </div>
-                            <div class="s-b-text">
-                            <a>My first C# game project made as a student</a>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="s-box">
-                        <div class="s-b-img">
-                            <div class="s-type">TextEditor</div>
-                            <img src="images/texteditor.jpg">
-                        </div>
-                            <div class="s-b-text">
-                            <a>This Text Editor is a desktop application created with C#</a>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
         <!--Skills section start-->
         <section class="skills" id="skills">
-            <div class="max-width">
-                <h2 class="title">My Skills</h2>
-                <div class="skills-content">
-                    <div class="column left">
-                        <div class="text">My creative skills & experiences.</div>
-                        <p>I started my development study in 2017 at ROC van Amsterdam in the netherlands,
-                            the first programming language I got envolved with was HTML and CSS. At the moment I work a lot with C# because of my work and I really like
-                            to build projects with it because C# is a OOP language, so I enjoy every challange I get. Javascript is also one of my favorites lenguages, becuase of his interaction.
-                        </p>
-                    </div>
-                    <div class="column right">
-                        <div class="bars">
-                            <div class="info">
-                                <span>HTML</span>
-                                <span>%80</span>   
+            <div class="maxwidth">
+                <div class="split">
+                    <h2 class="title">My Skills</h2>
+                            <h3 class="subtitle">All technologies I have experience with:</h3>
+                    <div class="carousel owl-carousel">
+                        <div class="card">
+                            <div class="box">
+                                <img src="images/html.png" height="260px" width="390px" class="cover" alt="HtmlImg">
+                                <div class="text">HTML</div>
+                                <p>Html was my first lenaguage I learned at school, I've created a mobile store website with HTML/CSS and to be honest that is the worst site I have ever created, but it was my first
+                                    one, so no worries I learned from it.
+                                </p>
                             </div>
-                            <div class="line html"></div>
-                        </div>     
-                        <div class="bars">
-                            <div class="info">
-                                <span>CSS</span>
-                                <span>%80</span>                                
-                            </div>
-                            <div class="line css"></div>
-                        </div> 
-                        <div class="bars">
-                            <div class="info">
-                                <span>PHP</span>
-                                <span>%75</span>                               
-                            </div>
-                            <div class="line php"></div>
                         </div>
-                        <div class="bars">
-                            <div class="info">
-                                <span>Javascript</span>
-                                <span>%70</span>                                
+                        <div class="card">
+                            <div class="box">
+                                <img src="images/css.png" alt="">
+                                <div class="text">CSS</div>
+                                <p>Html was my first lenaguage I learned at school, I've created a mobile store website with HTML/CSS and to be honest that is the worst site I have ever created, but it was my first
+                                    one, so no worries I learned from it.
+                                </p>
                             </div>
-                            <div class="line js"></div>
                         </div>
-                        <div class="bars">
-                            <div class="info">
-                                 <span>C#</span>
-                                 <span>%90</span>                                 
+                        <div class="card">
+                            <div class="box">
+                                <img src="images/csharp.png" alt="">
+                                <div class="text">C#</div>
+                                <p>Html was my first lenaguage I learned at school, I've created a mobile store website with HTML/CSS and to be honest that is the worst site I have ever created, but it was my first
+                                    one, so no worries I learned from it.
+                                </p>
                             </div>
-                            <div class="line csharp"></div>
                         </div>
-                        <div class="bars">
-                            <div class="info">
-                                <span>SQL</span>
-                                <span>%75</span>
+                        <div class="card">
+                            <div class="box">
+                                <img src="images/Javascript.png" alt="">
+                                <div class="text">Javascript</div>
+                                <p>Html was my first lenaguage I learned at school, I've created a mobile store website with HTML/CSS and to be honest that is the worst site I have ever created, but it was my first
+                                    one, so no worries I learned from it.
+                                </p>
                             </div>
-                            <div class="line mysql"></div>
-                        </div>   
+                        </div>
+                        <div class="card">
+                            <div class="box">
+                                <img src="images/sql.png" alt="">
+                                <div class="text">SQL</div>
+                                <p>Html was my first lenaguage I learned at school, I've created a mobile store website with HTML/CSS and to be honest that is the worst site I have ever created, but it was my first
+                                    one, so no worries I learned from it.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="box">
+                                <img src="images/react.png" alt="">
+                                <div class="text">React</div>
+                                <p>Html was my first lenaguage I learned at school, I've created a mobile store website with HTML/CSS and to be honest that is the worst site I have ever created, but it was my first
+                                    one, so no worries I learned from it.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="box">
+                                <img src="images/WP.png" alt="">
+                                <div class="text">Wordpress</div>
+                                <p>Html was my first lenaguage I learned at school, I've created a mobile store website with HTML/CSS and to be honest that is the worst site I have ever created, but it was my first
+                                    one, so no worries I learned from it.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Contact Section start -->
         <section class="contact" id="contact">
-            <div class="max-width">
-                <h2 class="title">Contact me</h2>
-            
-                    <div class="containerc">
-                        <span class="big-circle"></span>
-                        <div class="form">
-                            <div class="contct-info">
-                                <h3 class="titlec">Let's get in touch</h3>
-                                <p class="text">
-                                    If you have any question about my website or projects, just hit me up. I will answer as soon as possible
-                                </p>
-                                <div class="info">
-                                    <div class="information">
-                                      <img src="images/maps.png" class="icon" alt=""> 
-                                      <p>Holland Amstelveen, 1186LE</p> 
-                                    </div>
-                                    <div class="information">
-                                        <img src="images/mail.png" class="icon" alt=""> 
-                                        <p>cfam1997@hotmail.com</p> 
-                                    </div>
-                                    <div class="information">
-                                        <img src="images/phone.png" class="icon" alt=""> 
-                                        <p>+31640277874</p> 
+            <div class="maxwidth">
+                <div class="split">
+
+                    <h2 class="title">Contact me</h2>
+                        <div class="containerc">
+                            <span class="big-circle"></span>
+                            <div class="form">
+                                <div class="contct-info">
+                                    <h3 class="titlec">Let's get in touch</h3>
+                                    <p class="text">
+                                        If you have any question about my website or projects, just hit me up. I will answer as soon as possible
+                                    </p>
+                                    <div class="info">
+                                        <div class="information">
+                                          <img src="images/maps.png" class="icon1" alt="">
+                                          <p>Holland Amstelveen, 1186LE</p>
+                                        </div>
+                                        <div class="information">
+                                            <img src="images/mail.png" class="icon1" alt="">
+                                            <p>cfam1997@hotmail.com</p>
+                                        </div>
+                                        <div class="information">
+                                            <img src="images/phone.png" class="icon1" alt="">
+                                            <p>+31640277874</p>
+                                        </div>
                                     </div>
                                 </div>
+                    
+                                <div class="contct-form" id="contactform" action="#">
+                                    <span class="circle one"></span>
+                                    <span class="circle two"></span>
+                                    <form action="index.html" autocomplete="off">
+                                        <h3 class="titlec">Contact me</h3>
+                                        <div class="input-container">
+                                            <input type="username" id="Name" class="input" required />
+                                            <label for="">Username</label>
+                                            <span>Username</span>
+                                        </div>
+                                        <div class="input-container">
+                                            <input type="email" id="Email" class="input" required />
+                                            <label for="">Email</label>
+                                            <span>Email</span>
+                                        </div>
+                                        <div class="input-container">
+                                            <input type="tel" id="Phone" class="input" required />
+                                            <label for="">Phone</label>
+                                            <span>Phone</span>
+                                        </div>
+                                        <div class="input-container textarea">
+                                            <textarea id="Message" class="input" required></textarea>
+                                            <label for="">Message</label>
+                                            <span>Message</span>
+                                        </div>
+                                        <button onclick="SendMail()" class="btn" >Send</button>
+                                    </form>
+                                </div>
                             </div>
-                                               
-                            <div class="contct-form" id="contactform" action="#">
-                                <span class="circle one"></span>
-                                <span class="circle two"></span>
-
-                                <form action="index.html" autocomplete="off">
-                                    <h3 class="titlec">Contact me</h3>
-                                    <div class="input-container">
-                                        <input type="username" id="Name" class="input" required />
-                                        <label for="">Username</label>
-                                        <span>Username</span>
-                                    </div>
-                                    <div class="input-container">
-                                        <input type="email" id="Email" class="input" required />
-                                        <label for="">Email</label>
-                                        <span>Email</span>
-                                    </div>
-                                    <div class="input-container">
-                                        <input type="tel" id="Phone" class="input" required />
-                                        <label for="">Phone</label>
-                                        <span>Phone</span>
-                                    </div>
-                                    <div class="input-container textarea">
-                                        <textarea id="Message" class="input" required></textarea>
-                                        <label for="">Message</label>
-                                        <span>Message</span>
-                                    </div>
-                                    <button onclick="SendMail()" class="btn" >Send</button>
-                                </form>
-                            </div>
-                        </div>               
-                    </div>
+                        </div>
+                </div>
             </div>
         </section>    
     <footer>
         <span> Created By <a href="#">Cristian Arboleda</a> <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
     </footer>
-    <script src="script.js"></script>
-   
 </body>
 </html>

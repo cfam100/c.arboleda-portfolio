@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;/*text fits into box*/
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
 *{
     margin: 0;
@@ -5,14 +11,34 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+h1, h2, h3{
+    font-family: 'ubuntu', sans-serif;
+    font-weight: 900;
+    line-height: 1;
+}
+h1, h2, h3, p{
+    margin-bottom: 2em;
+}
+/* img{
+    max-width: 100%;
+    display: block;
+} */
 html, body{
     scroll-behavior: smooth;
-     overflow-x:hidden ;/*prevents white spaces on the sides */
+    overflow-x:hidden ;/*prevents white spaces on the sides */
+    line-height: 1.5;/*space between all text*/
 }
-.max-width{
-    max-width: 1300px;
-    padding: 0 0px;
-    margin:auto;
+section{
+    padding: 4rem 0;
+}
+
+.split{
+    padding: max(3vh, 1.5rem);
+}
+
+.maxwidth{
+    width: min(100%, 80rem) ;
+    margin-inline:auto;
 }
 
 /* navbar styling */
@@ -25,28 +51,14 @@ html, body{
     transition: all 0.3 ease;
 }
 .navbar.sticky {
-    padding: 15px 0;
-    background: rgb(3, 39, 80);
+    padding: 23px 0;
+    background: rgb(0, 45, 87);
 }
 
-.navbar .max-width{
+.navbar .maxwidth{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.navbar .logo a{
-    color: rgb(253, 242, 242);
-    font-size: 35px;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    margin-left: -100px;
-}
-.navbar .logo a span{
-    color: rgb(3, 39, 80);
-    transition: all 0.3 ease;
-}
-.navbar.sticky .logo a span{
-    color:whitesmoke;
 }
 
 .navbar .menu li{
@@ -63,7 +75,14 @@ html, body{
     transition: color 0.3s ease;
 }
 .navbar .menu li a:hover{
-    color: crimson;
+    color: rgb(75, 213, 255);
+}
+#logo {
+    position: relative;
+    display: inline-block;
+    margin: -15px -75px; /* margin: 20px was off */
+    height: 40px;
+    width: auto; /* correct proportions to specified height */
 }
 /* menu btn styling */
 .menu-btn{
@@ -75,8 +94,8 @@ html, body{
 
 .scrollupbtn{
     position: fixed;
-    height: 45px;
-    width: 42px;   
+    height: 40px;
+    width: 40px;   
     right: 30px;
     bottom: 10px;
     text-align: center;
@@ -93,13 +112,16 @@ html, body{
     justify-content: center;
     pointer-events: none;
     transition: all 0.5s ease;
-    background: crimson;
+    background:  rgb(3, 39, 80);  
+}
+.scrollupbtn:hover{
+    background:  rgb(75, 213, 255);
 }
 .scrollupbtn.active{
     bottom: 32px;
     pointer-events: auto;
     opacity: 1;
-  }
+}
 
 .scrollupbtn i{
     font-size: 20px;
@@ -109,49 +131,55 @@ html, body{
     opacity: 1;
     pointer-events: auto;
 }
+
 /* home section styling*/
 .home{
     display: flex;
-    background-image: url("images/Arboleda.C.PNG");
-    background-size: 30%;
-    background-repeat: no-repeat;
-    background-position: right bottom;
+    background: linear-gradient(rgb(3, 39, 80), rgba(61, 123, 182, 0.856));/*This code gets filled with the statement cover(down below)*/
     height: 100vh;
-    color: whitesmoke;
-    background-color: rgb(91, 145, 206); 
+    color: whitesmoke; 
     font-family: 'ubuntu', sans-serif;
 }
- /* .backgroundimg{
-    background-image: url("images/Arboleda.C.PNG") no-repeat center;
-    width: 500px;
-    height: 500px;
-    
-}  */
-.home .max-width{
-    margin:auto 0 auto 40px;
-    background-size: cover;
+.hpimg{  
+    object-fit: none;/*quality img*/
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: -148.75% 80%;   
+}
+.hpimg1{
+    display: none;
+}
+.home .maxwidth{
+    margin:25% auto auto 2%;
 }
 .home-content{
- margin-left:100px;
+    margin:-20% 15%;
+    line-height: 1.2;
+    width: 70%;
 }
 .home .home-content .text-1{
     font-size: 27px;
 }
 .home .home-content .text-2{
-    font-size: 75px;
+    font-size: 100px;
     font-weight: 600;
-    margin-left: -3px;
+    margin-left: -1%;
+    text-shadow: 2px 2px 5px whitesmoke;
 }
 .home .home-content .text-3{
-    font-size: 40px;
-    overflow: hidden;
+    font-size: 35px;
+    margin-left: 0%;
 }
 .typing{
     color: rgb(3, 39, 80);
+    text-shadow: 2px 2px 3px  rgb(3, 39, 80);
     font-weight: 500;
     position: relative;
     font-size: 40px;
     margin-left: 15px;
+
 }
 .typing::after {
     content: "";
@@ -170,45 +198,87 @@ html, body{
     100%{
         opacity: 1;
     }
-}
+ } /*Animation code */
 
 
 /* social media links style*/
-.social{
-    position: absolute;
-    left: 200px;
-    bottom: 20px;
-    display: flex;
-}
-.social a{
-    margin: 6px 12px;
-}
-.social i{
-    color: rgba(8, 14, 44);
+.icon{
+    display: inline-block;
+    animation: float 5s ease-in-out infinite;
+    position: relative;
+    margin: 40% 1.5%;
+    left: 0%;
+    color: whitesmoke;
     font-size: 30px;
+    overflow: auto;
+    white-space: nowrap;
 }
-.social a:hover i{
-    color: brown;
+.fa-facebook-f{
+    animation-delay: 0s;
     transition: all ease 0.5s;
 }
+.fa-facebook-f:hover{
+    color: rgb(0, 60, 255);
+    
+}
+.fa-twitter {
+    animation-delay: 1s;
+    transition: all ease 0.5s;
+}
+.fa-twitter:hover {
+    color: rgb(23, 222, 238);
+}
+.fa-instagram {
+    animation-delay: 2s;
+    transition: all ease 0.5s;
+}
+.fa-instagram:hover {
+    color: rgb(238, 23, 173);
+}
+.fa-linkedin{
+    animation-delay: 3s;
+    transition: all ease 0.5s;
+}
+.fa-linkedin:hover {
+    color: rgb(0, 49, 139);
+}
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
+
+    }
+}
 
 
-/* all similar content styling code*/
+/* Similar content styling code*/
 section{
-    padding: 100px 0;
+    padding: 3rem 0;
+}
+.container--narrow{
+    max-width: 70rem;  
 }
 .about, .projects, .skills, .contact, .footer{
    font-family: 'Poppins', sans-serif; 
 }
 .about .about-content, 
-.projects .projects-content, 
-.skills .skills-content{
+.projects, .skills, .contact{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
-.about .title{
+.subtitle{
+    position: relative;
+    text-align: center;
+    color:rgb(3, 39, 80);
+}
+.about .title, .about .title {
     position: relative;
     text-align: center;
     font-size: 40px;
@@ -248,10 +318,11 @@ section{
     width: 45%;
 }
 .about .about-content .left img{
-    height: 400px;
-    width: 400px;
+    max-height: 20rem;
+    max-width: 20rem;
     object-fit: cover;
     border-radius: 100%;
+    border: 6px solid rgb(15, 69, 131);
 }
 .about .about-content .right{
     width: 55%;
@@ -267,22 +338,6 @@ section{
 .about .about-content .right p{
     text-align: justify;
 }
-/* .about .about-content .right a{
-    display: inline-block;
-    background: rgb(89, 184, 201);
-    color: rgb(15, 69, 131);
-    font-size: 20px;
-    font-weight: 500;
-    padding: 1px 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    border:  3px solid rgb(15, 69, 131);
-    transition: all 0.3 ease;
-}
-.about .about-content .right a:hover{
-    color: whitesmoke;
-    background-color: crimson;
-} */
 .buttonb{
     border-radius: 4px;
     background-color: rgb(15, 69, 131);
@@ -293,7 +348,7 @@ section{
     width: 140px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 15px 130px;
+    margin: 5px 100px;
 }
 .buttonb a{
     color: #FFFFFF;
@@ -381,11 +436,7 @@ section{
     background: whitesmoke;
     transform: translateX(-50%);
 }
-.subtitleP{
-    position: relative;
-    text-align: center;
-    color:rgb(3, 39, 80);
-}
+
 .s-box{
     background-color:rgb(15, 69, 131);
     width: 250px;
@@ -400,15 +451,17 @@ section{
 .s-box:hover{
     transform: translateY(-10px);
     transition: all ease 0.3ms;
-    /* border: 2px solid crimson; */
-    box-shadow: 2px 2px 22px crimson;
+    box-shadow: 2px 2px 30px rgb(0, 87, 187);
 
 }
 .s-b-container{
-    display:flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    grid-gap: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2px;
+    margin: 10px 16px 16px 16px;
 }
 .s-b-img{
     width: 100%;
@@ -428,10 +481,9 @@ section{
     align-items: center;
 }
 .s-b-text a{
-    margin: 0px;
+    margin: auto;
     color: #ffff;
     font-size: 1.1rem;
-    font-family: Calibri;
     display: block;
     display: -webkit-box;
     max-width: 80%;
@@ -439,11 +491,12 @@ section{
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
+    text-align: center;
 }
 .s-type{
-    font-family: calibri;
+ 
     color: #fff;
-    background-color: crimson;
+    background-color:  rgb(0, 140, 255);
     padding: 10px 15px;
     position: absolute;
     top: 0px;
@@ -455,12 +508,11 @@ section{
 }
 .s-b-text a:hover{
     color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px rgb(255, 255, 255);
 }
 
-section{
-    padding: 100px 0;
-}
 
+/* Skills section styling */
 .skills .title{
     position: relative;
     text-align: center;
@@ -491,60 +543,83 @@ section{
     background: whitesmoke;
     transform: translateX(-50%);
 }
-.skills .skills-content .column{
-    width: calc(50% - 30px);
+.skills{
+    /* height: 100vh; */
 }
-.skills .skills-content .left .text{
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.skills .skills-content .right .bars{
-    margin-bottom: 15px;
-}
-.skills .skills-content .right .info{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.skills .skills-content .right .span{
-    font-weight: 500;
-    font-size: 18px;
-}
-.skills .skills-content .right .line{
-    height: 5px;
-    width: 100%;
-    background: lightgrey;
+.skills .carousel .card{
+    background:  linear-gradient(0.25turn, rgb(15, 69, 131), rgba(3, 67, 162, 0.879), rgb(15, 69, 131));
+    max-width: 350px;
+    max-height: 350px;
+    border-radius: 6px;
+    padding: 2px 3px;
+    text-align: center;
+    transition: all 0.3 ease;
     position: relative;
-    margin-top: 10px;
-}
-.skills .skills-content .right .line::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: crimson;
+    justify-content: center;
+    margin-top: 30%;
+    color: whitesmoke;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10% 45% 80%;
+    margin: auto;
 }
 
-.skills-content .right .html::before{
-    width: 80%;
+.skills .carousel .card:hover{
+    background: linear-gradient(0.25turn, rgb(72, 132, 201), rgb(114, 169, 233), rgb(72, 132, 201));
+    color: black;
 }
-.skills-content .right .css::before{
-    width: 80%;
+.skills .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 5% 0;
+    color: whitesmoke;
+    text-shadow: 1px 1px 10px whitesmoke;
 }
-.skills-content .right .php::before{
-    width: 75%;
+.skills .carousel .card .box{
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3 ease;
 }
-.skills-content .right .js::before{
-    width: 70%;
+.skills .carousel .card:hover .box{
+    transform: scale(1.05);
 }
-.skills-content .right .csharp::before{
-    width: 90%;
+.skills .carousel .card img{
+    padding: 1% 1%;
+    height: 10rem;
+    width: 10rem;
+    object-fit: scale-down;
+    border-radius: 50%;
+    border: 6px solid whitesmoke;
+    margin: auto;
 }
-.skills-content .right .mysql::before{
-    width: 75%;
+.skills .carousel .card:hover img{
+    border-color: whitesmoke ;
 }
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid rgb(15, 69, 131)!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: linear-gradient(rgb(3, 39, 80),  rgba(3, 67, 162, 0.879))!important;
+}
+
 /*contact section styling*/
 .contact .title{
     position: relative;
@@ -576,17 +651,18 @@ section{
     background: whitesmoke;
     transform: translateX(-50%);
 }
+.contact .maxwidth{
+    min-width: 100%;
+}
+
 .containerc{
     position: relative;
-    /* height: 10px; */
-    min-width: 100%;
-    min-height: 100vh;
-    padding: 10rem;
-    background-color:white;
+    padding: 30rem ;
     overflow: hidden;  
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 1%;
     z-index: 0; /*Helps to not override other divs*/
 }
 .form{
@@ -773,7 +849,7 @@ textarea.input{
     align-items: center;
     font-size: 0.95rem;
 }
-.icon{
+.icon1{
     width: 28px;
     margin-right: 0.7rem;
 }
@@ -817,22 +893,32 @@ textarea.input{
       color: #f2f2f2;
   }
   footer span a{
-      color: crimson;
+      color: rgb(32, 185, 255);
       text-decoration: none;
   }
   footer span a:hover{
       text-decoration: underline;
   }
 
-  
+  /*Viewport section*/
+    @viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+    }
+    @-ms-viewport{/*Internet Explorer fix*/
+    widht: extend-to-zoom;
+    zoom: 1.0;
+    }
+
+
 /*responsive media query start*/
-@media (max-width: 1300px) {
+ @media (max-width: 1300px) {
     .home .max-width{
         margin-left: 0px;
     }
 }
 
-@media (max-width: 1104px) {
+@media (max-width: 1025px) and  (orientation: landscape) {
     .about .about-content .left img{
         height:350px;
         width: 350px;
@@ -856,12 +942,12 @@ textarea.input{
     }
     
 }
-
-@media (max-width: 991px) {
+/* 
+@media (max-width: 1025px) {
     .max-width{
         padding: 0 50px;    
     }
-}
+} */
 
 @media (max-width: 947px) {
  
@@ -871,6 +957,7 @@ textarea.input{
     }
     .menu-btn i.active:before{
         content: "\f00d";
+
     }
     .navbar .menu{
         position: fixed;
@@ -878,7 +965,7 @@ textarea.input{
         width: 100%;
         left: -100%;
         top: 0;     
-        background: black;
+        background: linear-gradient(rgb(3, 39, 80), rgb(61, 124, 182));
         text-align: center;
         padding-top: 80px;
         transition: all 0.8s ease;
@@ -920,165 +1007,85 @@ textarea.input{
 }
 
 
-@media (max-width: 500px) {
-    .max-width{
-        padding: 0 23px;  
+@media only screen and (min-width: 480px) {
+    section{
+        padding: 2rem 1rem;
     }
-    .home-content{
-        top: 300px;
-        position: absolute;
+    .split > * {
+        flex-basis:100% ;
     }
-    .home .home-content .text-1{
-        font-size: 20px;
-        top: 5px;
-    }
-    .home .home-content .text-2{
-        font-size: 40px; 
-        top: 5px;
-   
-    }
-    .home .home-content .text-3{
-        font-size: 30px;
-    }
-    .home .home-content .social{
-        position: absolute;
-        left: 5px;
-        bottom: -430px;
-        display: flex;
-    }
-    .home .home-content .social a:hover i{
-        color: crimson;
-        transition: all ease 0.5s;
-    }
-    .home .home-content .social a{
-        margin: 0 8px;
-    }
-    .home .home-content .social i{
-        color: rgba(8, 14, 44);
-        font-size: 205x;
-    }
-    .home{
-        display: flex;
-        background-image: url("images/Arboleda.C.PNG");
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: right bottom;
-        height: 100vh;
-    }
-    .typing{
-        font-weight: 5000;
-        position: absolute;
-        font-size: 35px;
-        margin-left: -350px;
-        top: 110px;
 
-    }
-    .typing::after {
-        content: "";
-        right: -5px;
-        width: 100px;
-    }
-    .about .about-content .left img{
-        height:300px;
-        width: 300px;
-        border-radius: 150px;
-    }
-    .buttonb{
-        margin-top: -130px;
-        margin-left: 140px;
-        position: absolute;      
-    }
-    .s-box{
-        width: 180px;
-        height: 200px;
-        margin: 20px;
-        position: relative;
-    }
-    .s-b-text{
-        width: 100%;
-        height: 50%;
-    }
-    .s-b-container{
-        display:flex;
-        flex-direction: grid;
-        justify-content: center;
-        align-items: center;
-    }
-    .containerc{  
-        position: relative;
-         padding: 1rem; 
-         top: 10px;
-         z-index: 0; /*Helps to not override other divs*/
-     }
-     .big-circle{
-        display: none;
-    }
-}
-@media (max-width: 480px) {
-    .navbar .logo a{
-        margin-left: -10px;
+    #logo{
+        font-size: 100%;
+        margin: 1% 15%; /* margin: 20px was off */
+        height: 30px;
+        width: auto; 
     }
     .menu-btn{
-        margin: 0 1px;
+        margin: 0 5%;
     }
-    .home .max-width{
-        margin-left: 0px;
-    }
-    .home{
-        display: flex;
-        background-image: url("images/Arboleda.C.PNG");
-        background-size: 80%;
-        height: 100vh;
+   
+    .icon{
+        position: relative;
+        margin-top: 25%;
+        left: 100%;      
+        font-size: 23px;
+        margin: 255% 3%;
     }
     .home-content{
-        margin-left:0;
-        margin-top: -100px;
-    }
-    .typing{
-        font-weight: 5000;
-        position: absolute;
-        font-size: 35px;
-        margin-left: -40px;
-        top: 120px;
-
-    }
-    .typing::after {
-        content: "";
-        right: -5px;
-    }
-       .home .home-content .social{
-        position: absolute;
-        left: -8px;
-        top: -50px;
-        display: flex;
-    }
-    .home .home-content .social a:hover i{
-        color: crimson;
-        transition: all ease 0.5s;
-    }
-    .home .home-content .social a{
-        margin: -10px 8px;
-    }
-    .home .home-content .social i{
-        font-size: 25px;
+        margin: -8% -7%;
+        line-height: 1.1;
     }
     .home .home-content .text-1{
-        font-size: 15px;
+        font-size: 14px;
+        margin-left: 2%;
     }
     .home .home-content .text-2{
-        font-size: 35px;      
+        font-size: 55px;      
     }
     .home .home-content .text-3{
-        font-size: 20px;
+        font-size: 15px;
     }
-    form,
-    .contct-info{
-        padding: 1.7rem 1.6rem;
+    .typing{
+        position: relative;
+        font-size: 20px;
+        margin-left: 4%;
+        color: rgb(69, 151, 245);
+        text-shadow: 2px 2px 3px  rgb(0, 31, 66);
+    }
+    .hpimg{  
+        display: none;
+    }
+    .hpimg1{  
+        object-fit: none;/*quality img*/
+        display: block;
+        position: relative;
+        height: 100%;
+        margin: -480% 10%;
+    }
+    form, .contct-info{
+        padding: 12% 10%;
     }
     .text, .information, p{
         font-size: 1rem;
+        padding: -10%;
+        margin-top: 10%;
     }
-    .icon{
+    .about .about-content .right .text {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: -10%;
+        text-align: center;
+    }
+    .buttonb{
+        margin-top: -20%;
+        margin-left: 20%;
+        position: absolute; 
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between;     
+    }
+    .icon1{
         width: 23px;
     }
     .input{
@@ -1091,13 +1098,9 @@ textarea.input{
         position: relative;
     }
     .about .about-content .left img{
-        height:250px;
-        width: 250px;
-    }
-    .buttonb{
-        margin-top: -290px;
-        margin-left: 100px;
-        position: absolute;      
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between;
     }
     .s-box{
         width: 150px;
@@ -1106,29 +1109,21 @@ textarea.input{
         position: relative;
     }
     .s-b-container{
-        margin: -40px;
+        margin: 0 -100px;
         display: grid;
         grid-template-columns: auto auto auto auto;
         grid-gap: 1px 1px;
         margin-top: 10px;
     }
-    .skills-content{
-        height: 80vh;
-    }
-    .skills .skills-content .column{
-        width: calc(100% - 10px);
-        margin-bottom: 300px;
-    }
-    .skills .skills-content .right{
-        margin-top: -250px;
-        position: relative;
-    }
     .containerc{  
         position: relative;
-         padding: 1rem; 
-         top: 10px;
-         z-index: 0; /*Helps to not override other divs*/
-       margin: -30px;
+        padding: 3%; 
+        top: 10px;
+        z-index: 0; /*Helps to not override other divs */
+        margin: -10%;
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between; 
      }
     .contct-info::before{
         display: none;
@@ -1141,4 +1136,155 @@ textarea.input{
         padding: 20px 5px;
         color: #f2f2f2;
     }
-}
+} 
+
+@media only screen and (min-width: 320px) {
+    section{
+        padding: 2rem 1rem;
+    }
+    .split > * {
+        flex-basis:100% ;
+    }
+    .split{
+        padding: max(0.5vh, 0.1rem);
+    }
+
+    #logo{
+        font-size: 100%;
+        margin: 1% 15%; /* margin: 20px was off */
+        height: 30px;
+        width: auto; 
+    }
+    .menu-btn{
+        margin: 0 5%;
+    }
+   
+    .icon{
+        position: relative;
+        margin-top: 1%;
+        left: 85%;      
+        font-size: 23px;
+        margin: 205% 3%;
+    }
+    .home-content{
+        margin: 5% -2%;
+        line-height: 1.1;
+    }
+    .home .home-content .text-1{
+        font-size: 14px;
+        margin-left: 2%;
+    }
+    .home .home-content .text-2{
+        font-size: 55px;      
+    }
+    .home .home-content .text-3{
+        font-size: 15px;
+    }
+    .typing{
+        position: relative;
+        font-size: 20px;
+        margin-left: 4%;
+        color: rgb(69, 151, 245);
+        text-shadow: 2px 2px 3px  rgb(69, 151, 245);
+    }
+    .hpimg{  
+        display: none;
+    }
+    .hpimg1{  
+        object-fit: none;/*quality img*/
+        display: block;
+        position: relative;
+        height: 100%;
+        margin: -395% 10%;
+    }
+    form, .contct-info{
+        padding: 10% 10%;
+    }
+    .text, .information, p{
+        font-size: 1.1rem;
+        margin: auto auto;
+        padding: 1% 1%;
+        margin-top: 2%;
+
+    }
+    .contct-info .titlec {
+        text-align: center;
+    }
+    .about .about-content .right .text {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: -5%;
+        text-align: center;
+    }
+    .buttonb{
+        margin-top: -40%;
+        padding: max(1vh, 0.7rem);
+        position: absolute; 
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between;     
+    }
+    .icon1{
+        width: 32px;
+    }
+    .input{
+        padding: 0.45rem 1.2rem;
+    }
+    .btn{
+        padding: 0.45rem 1.2rem;
+    } 
+    .about .about-content .right{
+        position: relative;
+    }
+    .about .about-content .left img{
+        min-height: 10%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .s-box{
+        width: 150px;
+        height: 200px;
+        margin: 25px;
+        position: relative;
+    }
+    .s-b-container{
+        margin: -100px;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 1px 1px;
+        margin-top: 10px;
+    }
+    .about{
+        height: 125vh;
+    }
+    .projects{
+        height: 150vh;
+    }
+    .skills .carousel .card {
+        padding: 10% 15%;
+    }
+    .contact{
+        height: 122vh;
+    }
+    .containerc{  
+        position: relative;
+        padding: 7%; 
+        top: 10px;
+        z-index: 0; /*Helps to not override other divs */
+        margin: -10%;
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between; 
+     }
+    .contct-info::before{
+        display: none;
+    }
+    .big-circle{
+        display: none;
+    }
+    footer{
+        background: #111;
+        padding: 20px 5px;
+        color: #f2f2f2;
+    }
+} 

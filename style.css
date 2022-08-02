@@ -39,6 +39,9 @@ section{
 .maxwidth{
     width: min(100%, 80rem) ;
     margin-inline:auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* navbar styling */
@@ -52,7 +55,7 @@ section{
 }
 .navbar.sticky {
     padding: 23px 0;
-    background: rgb(0, 45, 87);
+    background:  linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));
 }
 
 .navbar .maxwidth{
@@ -112,7 +115,9 @@ section{
     justify-content: center;
     pointer-events: none;
     transition: all 0.5s ease;
-    background:  rgb(3, 39, 80);  
+    background:  rgb(125, 186, 255); 
+    border: 3px solid rgb(15, 69, 131);
+ 
 }
 .scrollupbtn:hover{
     background:  rgb(75, 213, 255);
@@ -319,10 +324,11 @@ section{
 }
 .about .about-content .left img{
     max-height: 20rem;
-    max-width: 20rem;
+    min-width: 5rem;
     object-fit: cover;
     border-radius: 100%;
     border: 6px solid rgb(15, 69, 131);
+    position: relative;
 }
 .about .about-content .right{
     width: 55%;
@@ -348,7 +354,8 @@ section{
     width: 140px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px 100px;
+    margin: 5% 5%;
+    align-items: center;
 }
 .buttonb a{
     color: #FFFFFF;
@@ -438,9 +445,9 @@ section{
 }
 
 .s-box{
-    background-color:rgb(15, 69, 131);
-    width: 250px;
-    height: 350px;
+    background:linear-gradient( rgb(15, 69, 131), rgba(3, 67, 162, 0.879), rgb(15, 69, 131));
+    min-width: 150px;
+    min-height: 200px;
     margin: 20px;
     border-radius: 10px;
     overflow: hidden;
@@ -461,7 +468,7 @@ section{
     display: flex;
     flex-wrap: wrap;
     padding: 0 2px;
-    margin: 10px 16px 16px 16px;
+    margin: auto auto;
 }
 .s-b-img{
     width: 100%;
@@ -656,6 +663,7 @@ section{
 }
 
 .containerc{
+    min-width: 10rem;
     position: relative;
     padding: 30rem ;
     overflow: hidden;  
@@ -1007,138 +1015,8 @@ textarea.input{
 }
 
 
-@media only screen and (min-width: 480px) {
-    section{
-        padding: 2rem 1rem;
-    }
-    .split > * {
-        flex-basis:100% ;
-    }
 
-    #logo{
-        font-size: 100%;
-        margin: 1% 15%; /* margin: 20px was off */
-        height: 30px;
-        width: auto; 
-    }
-    .menu-btn{
-        margin: 0 5%;
-    }
-   
-    .icon{
-        position: relative;
-        margin-top: 25%;
-        left: 100%;      
-        font-size: 23px;
-        margin: 255% 3%;
-    }
-    .home-content{
-        margin: -8% -7%;
-        line-height: 1.1;
-    }
-    .home .home-content .text-1{
-        font-size: 14px;
-        margin-left: 2%;
-    }
-    .home .home-content .text-2{
-        font-size: 55px;      
-    }
-    .home .home-content .text-3{
-        font-size: 15px;
-    }
-    .typing{
-        position: relative;
-        font-size: 20px;
-        margin-left: 4%;
-        color: rgb(69, 151, 245);
-        text-shadow: 2px 2px 3px  rgb(0, 31, 66);
-    }
-    .hpimg{  
-        display: none;
-    }
-    .hpimg1{  
-        object-fit: none;/*quality img*/
-        display: block;
-        position: relative;
-        height: 100%;
-        margin: -480% 10%;
-    }
-    form, .contct-info{
-        padding: 12% 10%;
-    }
-    .text, .information, p{
-        font-size: 1rem;
-        padding: -10%;
-        margin-top: 10%;
-    }
-    .about .about-content .right .text {
-        font-size: 25px;
-        font-weight: 600;
-        margin-bottom: -10%;
-        text-align: center;
-    }
-    .buttonb{
-        margin-top: -20%;
-        margin-left: 20%;
-        position: absolute; 
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between;     
-    }
-    .icon1{
-        width: 23px;
-    }
-    .input{
-        padding: 0.45rem 1.2rem;
-    }
-    .btn{
-        padding: 0.45rem 1.2rem;
-    } 
-    .about .about-content .right{
-        position: relative;
-    }
-    .about .about-content .left img{
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .s-box{
-        width: 150px;
-        height: 200px;
-        margin: 25px;
-        position: relative;
-    }
-    .s-b-container{
-        margin: 0 -100px;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 1px 1px;
-        margin-top: 10px;
-    }
-    .containerc{  
-        position: relative;
-        padding: 3%; 
-        top: 10px;
-        z-index: 0; /*Helps to not override other divs */
-        margin: -10%;
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between; 
-     }
-    .contct-info::before{
-        display: none;
-    }
-    .big-circle{
-        display: none;
-    }
-    footer{
-        background: #111;
-        padding: 20px 5px;
-        color: #f2f2f2;
-    }
-} 
-
-@media only screen and (min-width: 320px) {
+@media all and (max-width: 992px) {
     section{
         padding: 2rem 1rem;
     }
@@ -1151,7 +1029,7 @@ textarea.input{
 
     #logo{
         font-size: 100%;
-        margin: 1% 15%; /* margin: 20px was off */
+        margin: 1% 20%; /* margin: 20px was off */
         height: 30px;
         width: auto; 
     }
@@ -1167,7 +1045,7 @@ textarea.input{
         margin: 195% 3%;
     }
     .home-content{
-        margin: 5% -2%;
+        margin: 105% -2%;
         line-height: 1.1;
     }
     .home .home-content .text-1{
@@ -1258,7 +1136,7 @@ textarea.input{
         padding: 10% 15%;
     }
     .home{
-        height: 105vh;
+        height: 180vh;
 
     }
     .about{
@@ -1292,6 +1170,473 @@ textarea.input{
     footer{
         background: #111;
         padding: 20px 5px;
+        color: #f2f2f2;
+    }
+} 
+@media all and (max-width: 768px) {
+    .scrollupbtn{
+        display: none;
+    }
+    section{
+        padding: 2rem 1rem;
+    }
+    .split > * {
+        flex-basis:100% ;
+    }
+    .split{
+        padding: max(2.5vh, 2.5rem);
+    }
+
+    #logo{
+        font-size: 100%;
+        margin: 1% 60%; /* margin: 20px was off */
+        height: 30px;
+        width: auto; 
+    }
+    .menu-btn{
+        margin: 0 8%;
+    }
+   
+    .social .icon{
+        position: relative;
+        left: 0%;      
+        font-size: 23px;
+        margin: 125% 3%;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    .home-content{
+        margin: -15% -2%;
+        line-height: 1.1;
+    }
+    .home .home-content .text-1{
+        font-size: 15px;
+        margin-left: 2%;
+    }
+    .home .home-content .text-2{
+        font-size: 51px;      
+    }
+    .home .home-content .text-3{
+        font-size: 20px;
+        line-height: 1;
+    }
+    .typing{
+        position: relative;
+        font-size: 35px;
+        margin-left: 4%;
+        color: rgb(69, 151, 245);
+        text-shadow: 2px 2px 3px  rgb(69, 151, 245);
+    }
+    .hpimg{  
+        display: none;
+    }
+    .hpimg1{  
+        object-fit: none;/*quality img*/
+        display: block;
+        position: relative;
+        height: 100%;
+        margin: -230% 70%;
+    }
+
+    .about .about-content .right .text {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: auto;
+        text-align: center;
+    }
+    .buttonb{
+        padding: max(0.1vh, 0.5rem);  
+        position: relative; 
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between;   
+        display: block;  
+        margin: auto;
+    }
+    .icon1{
+        width: 30px;
+    }
+    .input{
+        padding: 0.45rem 1.2rem;
+    }
+    .btn{
+        padding: 0.45rem 1.2rem;
+    } 
+    .about .about-content .right{
+        position: relative;
+    }
+    .about .about-content .left img{
+        align-items: center;
+        justify-content: space-between;
+        padding: 1%;
+        position: relative;
+    }
+    .s-box{
+        margin: 5% 5%;
+        position: relative; 
+    }
+    .s-b-container{     
+        display: grid;
+        grid-template-columns: auto 35% auto auto;
+        margin-top: 10px;
+    }
+    .skills .carousel .card {
+        padding: 10% 15%;
+        margin: 10% 1%;
+    }
+    .home{
+        height: 105vh;
+
+    }
+    .about{
+        height: 120vh;
+    }
+    .projects{
+        height: 200vh;
+    } 
+    .contact{
+        height: 180vh;
+    }
+    .skills{
+        height: 100vh;
+    }
+    form, .contct-info{
+        padding: 10% 10%;
+    }
+    .contct-info .titlec {
+        text-align: center;
+    }
+    .containerc{  
+        position: relative;
+        padding: 15%; 
+        top: 10px;
+        z-index: 0; /*Helps to not override other divs */
+        margin: -10%;
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between;
+     }
+    .contct-info::before{
+        display: none;
+    }
+    .big-circle{
+        display: none;
+    }
+    footer{
+        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));;
+        text-align: center;
+        color: #f2f2f2;
+    }
+} 
+
+@media all and (max-width: 450px) {
+    .scrollupbtn{
+        display: none;
+    }
+    section{
+        padding: 2rem 1rem;
+    }
+    .split > * {
+        flex-basis:100% ;
+    }
+    .split{
+        padding: max(0.5vh, 0.1rem);
+    }
+
+    #logo{
+        font-size: 100%;
+        margin: 1% 20%; /* margin: 20px was off */
+        height: 30px;
+        width: auto; 
+    }
+    .menu-btn{
+        margin: 0 5%;
+    }
+   
+    .social .icon{
+        position: relative;
+        left: 0%;      
+        font-size: 23px;
+        margin: 10% 3%;
+        animation: none;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    .home-content{
+        margin: 0% -2%;
+        line-height: 1.1;
+    }
+    .home .home-content .text-1{
+        font-size: 12px;
+        margin-left: 2%;
+    }
+    .home .home-content .text-2{
+        font-size: 45px;      
+    }
+    .home .home-content .text-3{
+        font-size: 13px;
+    }
+    .typing{
+        position: relative;
+        font-size: 25px;
+        margin-left: 4%;
+        color: rgb(69, 151, 245);
+        text-shadow: 2px 2px 3px  rgb(69, 151, 245);
+    }
+    .hpimg{  
+        display: none;
+    }
+    .hpimg1{  
+        object-fit: none;/*quality img*/
+        display: block;
+        position: relative;
+        height: 100%;
+        margin: 10% 10%;
+    }
+
+    .about .about-content .right .text {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: auto;
+        text-align: center;
+    }
+    .buttonb{
+        padding: max(0.1vh, 0.5rem);  
+        position: relative; 
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between;   
+        display: block;  
+        margin: auto;
+    }
+    .icon1{
+        width: 30px;
+    }
+    .input{
+        padding: 0.45rem 1.2rem;
+    }
+    .btn{
+        padding: 0.45rem 1.2rem;
+    } 
+    .about .about-content .right{
+        position: relative;
+    }
+    .about .about-content .left img{
+        align-items: center;
+        justify-content: space-between;
+        padding: 1%;
+        position: relative;
+    }
+    .s-box{
+        margin: 25px;
+        position: relative;
+    }
+    .s-b-container{     
+        display: grid;
+        grid-template-columns: auto 35% auto auto;
+        margin-top: 10px;
+    }
+    .skills .carousel .card {
+        padding: 10% 15%;
+    }
+    .home{
+        height: 105vh;
+
+    }
+    .about{
+        height: 135vh;
+    }
+    .projects{
+        height: 170vh;
+    } 
+    .contact{
+        height: 150vh;
+    }
+    .skills{
+        height: 100vh;
+    }
+    form, .contct-info{
+        padding: 10% 10%;
+    }
+    .contct-info .titlec {
+        text-align: center;
+    }
+    .containerc{  
+        position: relative;
+        padding: 7%; 
+        top: 10px;
+        z-index: 0; /*Helps to not override other divs */
+        margin: -10%;
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between; 
+     }
+    .contct-info::before{
+        display: none;
+    }
+    .big-circle{
+        display: none;
+    }
+    footer{
+        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 42, 97), rgb(0, 36, 70));;
+        text-align: center;
+        color: #f2f2f2;
+    }
+} 
+
+@media all and (max-width: 320px) {
+    .scrollupbtn{
+        display: none;
+    }
+    section{
+        padding: 2rem 1rem;
+    }
+    .split > * {
+        flex-basis:100% ;
+    }
+    .split{
+        padding: max(0.5vh, 0.1rem);
+    }
+
+    #logo{
+        font-size: 100%;
+        margin: 1% 15%; /* margin: 20px was off */
+        height: 30px;
+        width: auto; 
+    }
+    .menu-btn{
+        margin: 0 5%;
+    }
+   
+    .icon{
+        position: relative;
+        left: 0%;      
+        font-size: 23px;
+        margin: 15% 3%;
+    }
+    .home-content{
+        margin: 5% -2%;
+        line-height: 1.1;
+    }
+    .home .home-content .text-1{
+        font-size: 10px;
+        margin-left: 2%;
+    }
+    .home .home-content .text-2{
+        font-size: 40px;      
+    }
+    .home .home-content .text-3{
+        font-size: 12px;
+    }
+    .typing{
+        position: relative;
+        font-size: 20px;
+        margin-left: 4%;
+        color: rgb(69, 151, 245);
+        text-shadow: 2px 2px 3px  rgb(69, 151, 245);
+    }
+    .hpimg{  
+        object-fit: none;/*quality img*/
+        display: block;
+        position: relative;
+        height: 200%;
+        width: 150%;
+        margin: 49% 0%;
+    }
+    .hpimg1{  
+        display: none;
+
+    }
+    form, .contct-info{
+        padding: 10% 10%;
+    }
+    .text, .information, p{
+        font-size: 1.1rem;
+        margin: auto auto;
+        padding: 1% 1%;
+        margin-top: 2%;
+
+    }
+    .contct-info .titlec {
+        text-align: center;
+    }
+    .about .about-content .right .text {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: -5%;
+        text-align: center;
+    }
+    .buttonb{
+        margin-top: min(-95%);
+        margin-left: min(20%);
+        position: absolute; 
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between;     
+    }
+    .icon1{
+        width: 32px;
+    }
+    .input{
+        padding: 0.45rem 1.2rem;
+    }
+    .btn{
+        padding: 0.45rem 1.2rem;
+    } 
+    .about .about-content .right{
+        position: relative;
+    }
+    .about .about-content .left img{
+        align-items: center;
+        justify-content: space-between;
+    }
+    .s-box{
+        margin: 25px;
+        position: relative;
+    }
+    .s-b-container{     
+        display: grid;
+        grid-template-columns: auto 35% auto auto;
+        margin-top: 10px;
+    }
+    .skills .carousel .card {
+        padding: 10% 15%;
+    }
+    .home{
+        height: 105vh;
+
+    }
+    .about{
+        height: 125vh;
+    }
+    .projects{
+        height: 170vh;
+    } 
+    .contact{
+        height: 130vh;
+    }
+    .skills{
+        height: 90vh;
+    }
+    .containerc{  
+        position: relative;
+        padding: 7%; 
+        top: 10px;
+        z-index: 0; /*Helps to not override other divs */
+        margin: -10%;
+        min-height: auto;
+        align-items: center;
+        justify-content: space-between; 
+     }
+    .contct-info::before{
+        display: none;
+    }
+    .big-circle{
+        display: none;
+    }
+    footer{
+        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 42, 97), rgb(0, 36, 70));;
+        text-align: center;
         color: #f2f2f2;
     }
 } 

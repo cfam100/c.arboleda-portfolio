@@ -16,9 +16,9 @@ h1, h2, h3{
     font-weight: 900;
     line-height: 1;
 }
-h1, h2, h3, p{
+/* h1, h2, h3, p{
     margin-bottom: 2em;
-}
+} */
 /* img{
     max-width: 100%;
     display: block;
@@ -454,6 +454,7 @@ section{
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
     position: relative;
     cursor: pointer;
+    margin: auto;
 }
 .s-box:hover{
     transform: translateY(-10px);
@@ -480,12 +481,13 @@ section{
     object-fit: cover;
 }
 .s-b-text{
-    width: 100%;
-    height: 30%;
+    /* width: 100%;
+    height: 30%; */
     background-color: rgb(15, 69, 131);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 .s-b-text a{
     margin: auto;
@@ -499,6 +501,7 @@ section{
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     text-align: center;
+    word-wrap: break-word;
 }
 .s-type{
  
@@ -555,10 +558,10 @@ section{
 }
 .skills .carousel .card{
     background:  linear-gradient(0.25turn, rgb(15, 69, 131), rgba(3, 67, 162, 0.879), rgb(15, 69, 131));
-    max-width: 350px;
-    max-height: 350px;
+    min-height: 10vh;
+    max-height: 50vh;
     border-radius: 6px;
-    padding: 2px 3px;
+    /* padding: 2px 3px; */
     text-align: center;
     transition: all 0.3 ease;
     position: relative;
@@ -576,13 +579,14 @@ section{
     background: linear-gradient(0.25turn, rgb(72, 132, 201), rgb(114, 169, 233), rgb(72, 132, 201));
     color: black;
 }
-.skills .carousel .card .text{
+.skills .carousel .card .text { 
     font-size: 25px;
     font-weight: 500;
-    margin: 5% 0;
     color: whitesmoke;
     text-shadow: 1px 1px 10px whitesmoke;
+    margin: auto;
 }
+
 .skills .carousel .card .box{
     
     flex-direction: column;
@@ -1078,13 +1082,13 @@ textarea.input{
     form, .contct-info{
         padding: 10% 10%;
     }
-    .text, .information, p{
+    /* .text, .information, p{
         font-size: 1.1rem;
         margin: auto auto;
         padding: 1% 1%;
         margin-top: 2%;
 
-    }
+    } */
     .contct-info .titlec {
         text-align: center;
     }
@@ -1444,21 +1448,21 @@ textarea.input{
 
     }
     .about{
-        height: 135vh;
+        min-height: 100vh;
     }
     .projects{
-        height: 170vh;
+        min-height: 100vh;
     } 
     .contact{
-        height: 150vh;
+        min-height: 100vh;
     }
     .skills{
-        height: 100vh;
+        min-height: 50vh;
     }
     form, .contct-info{
         padding: 10% 10%;
     }
-    .contct-info .titlec {
+    .contct-info .titlec{
         text-align: center;
     }
     .containerc{  
@@ -1550,13 +1554,13 @@ textarea.input{
     form, .contct-info{
         padding: 10% 10%;
     }
-    .text, .information, p{
+    /* .text, .information, p{
         font-size: 1.1rem;
         margin: auto auto;
         padding: 1% 1%;
         margin-top: 2%;
 
-    }
+    } */
     .contct-info .titlec {
         text-align: center;
     }

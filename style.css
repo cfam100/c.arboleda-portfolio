@@ -43,6 +43,15 @@ html, body{
     box-sizing: border-box;
 }
 
+/*Height Website*/ 
+.about .maxwidth, 
+.projects .maxwidth, 
+.skills .maxwidth,
+.contact .maxwidth{
+    min-height: 100%;
+    padding: 0 0 20% 0;
+}
+
 /* navbar styling */
 .navbar{
     max-height: 7vh;
@@ -67,27 +76,6 @@ html, body{
     margin: auto 14%;
 }
 
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
-}
-.navbar .menu li a{
-    display: block; /*returns navbar back when clicked */
-    color: whitesmoke;
-    font-size: 17px;
-    font-weight: 500;
-    margin-left: 1.5vw;
-    transition: color 0.3s ease;
-}
-.navbar .menu li a:hover{
-    color: rgb(75, 213, 255);
-}
-#logo {
-    position: relative;
-    display: inline-block;
-    height: 4vh;
-    object-fit: cover;
-}
 /* menu btn styling */
 .menu-btn{
     color: whitesmoke;
@@ -135,27 +123,69 @@ html, body{
     pointer-events: auto;
 }
 
+.navbar{
+    max-height: 7vh;
+    position: fixed;
+    min-width: 100%;
+    z-index: 999;
+    padding: 1.2vh; 
+    font-family: 'ubuntu', sans-serif;
+    transition: all 0.3 ease;
+    margin: auto auto auto;
+}
+.navbar.sticky {
+    max-height: 7vh;
+    padding: 1.2vh; 
+    background:  linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));
+}
+
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+    margin: auto;
+}
+.navbar .menu li a{
+    display: block; /*returns navbar back when clicked */
+    color: whitesmoke;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 1.5vw;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: rgb(75, 213, 255);
+}
+
+#logo {
+    position: relative;
+    display: inline-block;
+    height: 4vh;
+    object-fit: cover;
+}
 /* home section styling*/
 .home{
     display: flex;
     background: linear-gradient(rgb(3, 39, 80), rgba(61, 123, 182, 0.856));/*This code gets filled with the statement cover(down below)*/
-    min-height: 100vh;
     color: whitesmoke; 
     font-family: 'ubuntu', sans-serif;
 }
+.home .maxwidth{
+    margin:25% auto auto 2%;
+    min-height: 100%;
+    padding: 0 0 20% 0;
+}
 .hpimg{  
-    object-fit: none;/*quality img*/
+    object-fit: cover;/*quality img*/
     display: block;
     position: relative;
     height: 100%;
-    margin:-89.2% auto auto 100%;
+    margin:-100.2% 0 0 100%;
 }
 .hpimg1{
     display: none;
 }
-.home .maxwidth{
-    margin:25% auto auto 2%;
-}
+
 .home-content{
     margin:-27% 15%;
     line-height: 1;
@@ -343,6 +373,7 @@ section{
 .about .about-content .right p{
     text-align: justify;
 }
+
 .buttonb{
     border-radius: 4px;
     background-color: rgb(15, 69, 131);
@@ -353,8 +384,9 @@ section{
     width: 140px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5% 5%;
+    margin: 0% 8%;
     align-items: center;
+    color: #FFFFFF;
 }
 .buttonb a{
     color: #FFFFFF;
@@ -364,27 +396,27 @@ section{
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
+}
   
-  .buttonb span:after {
+.buttonb span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-  }
+}
   
-  .buttonb:hover span {
+.buttonb:hover span {
     padding-right: 25px;
-  }
+}
   
-  .buttonb:hover span:after {
+.buttonb:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
   
-  .containerb{
+.containerb{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -480,8 +512,6 @@ section{
     object-fit: cover;
 }
 .s-b-text{
-    /* width: 100%;
-    height: 30%; */
     background-color: rgb(15, 69, 131);
     display: flex;
     justify-content: center;
@@ -567,9 +597,11 @@ section{
     color: whitesmoke;
     align-items: center;
     display: flex; 
-    padding: 10% 10% 2vh;
-    margin: 5% 1%;
+    padding: 70% 5% 60% 5%;
     white-space: normal;
+    word-break:break-all;
+    margin: auto;
+    margin-top: 10vh;
 }
 
 .skills .carousel .card:hover{
@@ -584,9 +616,12 @@ section{
     margin: auto;
     word-break:break-all
 }
-
-.skills .carousel .card .box{
-    
+.box p{
+    word-break:break-all;
+    color: whitesmoke;
+    padding: 0 4% 10%; 
+}
+.skills .carousel .card .box{ 
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -898,9 +933,10 @@ textarea.input{
 }
 /* footer section styling*/
   footer{
-      background: #111;
-      padding: 20px 23px;
-      color: #f2f2f2;
+    background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));;
+    padding: 0.9% 2%;
+    text-align: center;
+    color: #f2f2f2;
   }
   footer span a{
       color: rgb(32, 185, 255);
@@ -925,10 +961,12 @@ textarea.input{
  @media (max-width: 1300px) {
     .home .max-width{
         margin-left: 0px;
-    }
+    }/**/
+
 }
 
-@media (max-width: 1025px) and  (orientation: landscape) {
+@media (max-width: 1025px) and (orientation: landscape) {
+   
     .about .about-content .left img{
         height:350px;
         width: 350px;
@@ -952,24 +990,34 @@ textarea.input{
     }
     
 }
-/* 
-@media (max-width: 1025px) {
-    .max-width{
-        padding: 0 50px;    
-    }
-} */
 
 @media (max-width: 960px) {
-    /* .maxwidth{
-        width: min(100%, 90vw);
-    } */
+    .scrollupbtn{
+        display: none;
+    }
+    .home .maxwidth{
+        min-height: 100%;
+        padding: 0 0 20% 0;
+    }
+    #logo{
+        margin: 0% -70%;
+    }
+    /*Maxwidth Responsive*/
+    .contact .maxwidth{
+        min-width: 95%;
+    }
+    .projects .maxwidth{
+        min-width: 90%;
+    } 
+    .skills .maxwidth{
+        min-width: 100%;
+    } 
+    .about .maxwidth{
+        min-width: 95%;
+    } 
     .menu-btn{
         display: block;
         margin: 0% -10%;
-    }
-    #logo{
-        object-fit: cover;
-        margin: 0% -70%;
     }
 
     .menu-btn i.active:before{
@@ -991,6 +1039,7 @@ textarea.input{
     }
     .navbar .menu li{
         display: block;
+        margin: 7% auto;
     }
     .navbar .menu li a{
         display: inline-block;
@@ -1003,9 +1052,7 @@ textarea.input{
     .home .home-content .text-3{
         font-size: 35px;
     }
-   .max-width{
-        max-width: 800px;
-    }
+
     .about .about-content .column{
         width: 100%;
     }
@@ -1078,13 +1125,7 @@ textarea.input{
     form, .contct-info{
         padding: 10% 10%;
     }
-    /* .text, .information, p{
-        font-size: 1.1rem;
-        margin: auto auto;
-        padding: 1% 1%;
-        margin-top: 2%;
-
-    } */
+    
     .contct-info .titlec {
         text-align: center;
     }
@@ -1095,7 +1136,7 @@ textarea.input{
         text-align: center;
     }
     .buttonb{
-        margin-top: -53%;
+        margin-top: 0%;
         padding: max(1vh, 0.7rem);
         position: absolute; 
         min-height: auto;
@@ -1135,22 +1176,11 @@ textarea.input{
     .skills .carousel .card {
         padding: 10% 15%;
     }
-    .home{
-        min-height: 100vh;
-
+    .box p{
+        width: 100%;
+        padding: 0 1% 10%; 
     }
-    .about{
-        min-height: 125vh;
-    }
-    .projects{
-        height: 170vh;
-    } 
-    .contact{
-        height: 130vh;
-    }
-    .skills{
-        height: 90vh;
-    }
+    
     .containerc{  
         position: relative;
         padding: 7%; 
@@ -1168,81 +1198,68 @@ textarea.input{
         display: none;
     }
     footer{
-        background: #111;
-        padding: 20px 5px;
+        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));;
+        padding: 4% 2%;
+        text-align: center;
         color: #f2f2f2;
-    }
+      }
 }
 
-
-
-
 @media all and (max-width: 768px) {
-    /* .maxwidth{
-        width: min(100%, 80vw);
-    } */
-    .scrollupbtn{
-        display: none;
-    }
-    section{
-        padding: 2rem 1rem;
-    }
-    
     .split > * {
         flex-basis:100% ;
     }
     .split{
-        padding: max(2.5vh, 2.5rem);
+        padding: max(0.5vh, 0.1rem);
     }
 
     #logo{
-        object-fit: cover;
-        font-size: 100%;
-        margin: 0% -40%;
+        margin: 0% -60%;
     }
     .menu-btn{
         margin: 0% -10%;
     }
    
     .social .icon{
-        position: relative;
         left: 0%;      
-        font-size: 23px;
-        margin: 125% 3%;
-        overflow: auto;
-        white-space: nowrap;
+        margin: 10% 3%;
+        animation: none;
     }
     .home-content{
-        margin: -15% -2%;
+        margin: auto 0%;
         line-height: 1.1;
+        width: 100%;
     }
     .home .home-content .text-1{
-        font-size: 15px;
+        font-size: 12px;
         margin-left: 2%;
     }
     .home .home-content .text-2{
-        font-size: 51px;      
+        font-size: 45px;      
     }
     .home .home-content .text-3{
         font-size: 20px;
-        line-height: 1;
+        line-height: 1.1;
+
     }
     .typing{
         position: relative;
-        font-size: 35px;
-        margin-left: 4%;
+        font-size: 25px;
+        margin-left: 0%;
         color: rgb(69, 151, 245);
         text-shadow: 2px 2px 3px  rgb(69, 151, 245);
+    }
+    .typing::after {
+        border-right: 2px solid  rgb(69, 151, 245);
     }
     .hpimg{  
         display: none;
     }
     .hpimg1{  
-        object-fit: none;/*quality img*/
+        object-fit: cover;/*quality img*/
         display: block;
         position: relative;
-        height: 100%;
-        margin: -230% 70%;
+        margin: 3vh 5vw;
     }
 
     .about .about-content .right .text {
@@ -1278,37 +1295,25 @@ textarea.input{
         padding: 1%;
         position: relative;
     }
-    .s-box{
-        margin: 5% 5%;
-        position: relative; 
+    .s-b-text{
+        display: none;
     }
     .s-b-container{     
         display: grid;
-        grid-template-columns: auto 35% auto auto;
-        margin-top: 10px;
+        grid-template-columns: auto 40% auto 40%;
+        margin-top: 10vh;
     }
+    .s-b-img img{
+        width: 100%;
+        height: 25vh;
+        object-fit: cover;
+    }
+    
     .skills .carousel .card {
         padding: 10% 40%;
         margin: 10% 10%;
     }
-    /* .home, .about, .projects, .contact, .skills{
-        min-height: 100vh;
-    } */
-    .home{
-        min-height: 200vh;
-    }
-    .about{
-        min-height: 100vh;
-    }
-    .projects{
-        min-height: 100vh;
-    } 
-    .contact{
-        height: 180vh;
-    }
-    .skills{
-        height: 100vh;
-    }
+
     form, .contct-info{
         padding: 10% 10%;
     }
@@ -1331,20 +1336,9 @@ textarea.input{
     .big-circle{
         display: none;
     }
-    footer{
-        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));;
-        text-align: center;
-        color: #f2f2f2;
-    }
 } 
 
 @media all and (max-width: 480px) {
-    .scrollupbtn{
-        display: none;
-    }
-    section{
-        padding: 2rem 1rem;
-    }
     .split > * {
         flex-basis:100% ;
     }
@@ -1353,8 +1347,6 @@ textarea.input{
     }
 
     #logo{
-        object-fit: cover;
-        font-size: 100%;
         margin: 0% -30%;
     }
     .menu-btn{
@@ -1362,17 +1354,14 @@ textarea.input{
     }
    
     .social .icon{
-        position: relative;
         left: 0%;      
         margin: 10% 3%;
         animation: none;
-        overflow: auto;
-        white-space: nowrap;
     }
     .home-content{
         margin: auto 0%;
         line-height: 1.1;
-        width: 95%;
+        width: 100%;
     }
     .home .home-content .text-1{
         font-size: 12px;
@@ -1382,16 +1371,19 @@ textarea.input{
         font-size: 45px;      
     }
     .home .home-content .text-3{
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.1;
 
     }
     .typing{
         position: relative;
         font-size: 25px;
-        margin-left: 4%;
+        margin-left: 0%;
         color: rgb(69, 151, 245);
         text-shadow: 2px 2px 3px  rgb(69, 151, 245);
+    }
+    .typing::after {
+        border-right: 2px solid  rgb(69, 151, 245);
     }
     .hpimg{  
         display: none;
@@ -1400,7 +1392,7 @@ textarea.input{
         object-fit: cover;/*quality img*/
         display: block;
         position: relative;
-        margin: 10vh 5vw;
+        margin: 3vh 5vw;
     }
 
     .about .about-content .right .text {
@@ -1410,13 +1402,31 @@ textarea.input{
         text-align: center;
     }
     .buttonb{
-        padding: max(0.1vh, 0.5rem);  
-        position: relative; 
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between;   
-        display: block;  
+        padding: max(0.1vh, 0.5rem);   
         margin: auto;
+    }
+    .about .about-content .right{
+        position: relative;
+        margin: auto;
+    }
+    .about .about-content .left img{
+        align-items: center;
+        justify-content: space-between;
+        padding: 1%;
+        position: relative;
+    }
+    .s-box{
+        margin: 8% 1%;
+    }
+    .s-b-container{     
+        display: grid;
+        grid-template-columns: auto 35% auto auto;
+        margin-top: 5vh;
+    }
+    .skills .carousel .card {
+        padding: 60% 45% 30% 45%;
+        margin: auto;
+        margin-top: 5vh;
     }
     .icon1{
         width: 30px;
@@ -1427,44 +1437,6 @@ textarea.input{
     .btn{
         padding: 0.45rem 1.2rem;
     } 
-    .about .about-content .right{
-        position: relative;
-    }
-    .about .about-content .left img{
-        align-items: center;
-        justify-content: space-between;
-        padding: 1%;
-        position: relative;
-    }
-    .s-box{
-        margin: 25px;
-        position: relative;
-    }
-    .s-b-container{     
-        display: grid;
-        grid-template-columns: auto 35% auto auto;
-        margin-top: 10px;
-    }
-    .skills .carousel .card {
-        padding: 30vh 40vw 28vh 40vw;
-        margin: 6% 5%;
-    }
-    /*Min-height Responsive*/
-    .home{
-        min-height: 100vh;
-    }
-    .about{
-        min-height: 100vh;
-    }
-    .projects{
-        min-height: 100vh;
-    } 
-    .contact{
-        min-height: 100vh;
-    }
-    .skills{
-        min-height: 50vh;
-    }
 
     form, .contct-info{
         padding: 10% 10%;
@@ -1485,27 +1457,11 @@ textarea.input{
     .contct-info::before{
         display: none;
     }
-    /*Maxwidth Responsive*/
-    .contact .maxwidth{
-        min-width: 95%;
-    }
-    .projects .maxwidth{
-        min-width: 90%;
-    } 
-    .skills .maxwidth{
-        min-width: 100%;
-    } 
-    .about .maxwidth{
-        min-width: 95%;
-    } 
+
     .big-circle{
         display: none;
     }
-    footer{
-        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 42, 97), rgb(0, 36, 70));;
-        text-align: center;
-        color: #f2f2f2;
-    }
+ 
 } 
 
 @media all and (max-width: 320px) {
@@ -1523,8 +1479,6 @@ textarea.input{
     }
 
     #logo{
-        object-fit: cover;
-        font-size: 100%;
         margin: 0% -25%;
     }
     .menu-btn{
@@ -1657,9 +1611,5 @@ textarea.input{
     .big-circle{
         display: none;
     }
-    footer{
-        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 42, 97), rgb(0, 36, 70));;
-        text-align: center;
-        color: #f2f2f2;
-    }
+ 
 } 

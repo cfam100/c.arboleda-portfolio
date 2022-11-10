@@ -83,7 +83,7 @@
                 items: 1,
                 nav: false
             },
-            600:{
+            500:{
                 items: 2,
                 nav: false
             },

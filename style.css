@@ -84,7 +84,7 @@ html, body{
 .scrollupbtn{
     position: fixed;
     height: 1.8rem;
-    width: 1.5rem;  
+    width: 1.8rem;  
     right: 1.2%;
     bottom: 10vh;
     margin-bottom: -1.5vh;
@@ -173,10 +173,13 @@ html, body{
     object-fit: cover;/*quality img*/
     display: block;
     position: relative;
-    margin:-70% 0 0 100%;
+    margin:-70% 0 0 96%;
     filter: drop-shadow(8px 8px 4px black);/*Shadow around whole img*/
 }
 .hpimg1{
+    object-fit: cover;/*quality img*/
+    display: block;
+    position: relative;
     display: none;
     filter: drop-shadow(8px 8px 4px black);
 }
@@ -206,7 +209,8 @@ html, body{
     position: relative;
     font-size: 40px;
     margin-left: 0;
-
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px  rgb(6, 54, 108));
 }
 .typing::after {
     content: "";
@@ -230,6 +234,11 @@ html, body{
 
 /* social media links style*/
 .icon{
+    /* IOS style */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
     display: inline-block;
     animation: float 5s ease-in-out infinite;
     position: relative;
@@ -238,7 +247,6 @@ html, body{
     font-size: 30px;
     overflow: auto;
     white-space: nowrap;
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
 }
 .fa-facebook-f{
@@ -362,7 +370,6 @@ section{
     padding: 0.5%;
     margin-top: -20%;
     display: inline-block;
-
 }
 .about .about-content .right{
     min-width: 50%;
@@ -476,8 +483,7 @@ section{
 
 .s-box{
     background-color: rgb(15, 69, 131);
-    min-width: 15vw;
-    min-height: 20vh;
+    /* max-width: 12rem; */
     height: 35vh;
     width: 15vw;
     border-radius: 15px;
@@ -588,11 +594,8 @@ section{
 
 .skills .carousel .card{
     background:  linear-gradient(0.25turn, rgb(15, 69, 131), rgba(3, 67, 162, 0.879), rgb(15, 69, 131));
-    min-height: 10vh;
-    min-width: 15vw;
-    max-width: 80vw;
-    width: 20vw;
-    height: 45vh;
+    width: 97%;
+    height: 25rem; 
     border-radius: 10px;
     /* padding: 2px 3px; */
     transition: all 0.3 ease;
@@ -603,8 +606,9 @@ section{
     display:block; 
     white-space: normal;
     word-break:break-all;
+    text-align: center;
     margin: auto;
-    padding: 5%;
+    padding: 25px 35px;
     margin-top: 10vh;
 }
 
@@ -632,7 +636,7 @@ section{
     align-items: center;
     justify-content: center;
     transition: all 0.3 ease;
-    padding: 5% 5% 5% 5%;
+    padding: 5% 5%;
 }
 .skills .carousel .card:hover .box{
     transform: scale(1.05);
@@ -702,22 +706,17 @@ section{
     background: whitesmoke;
     transform: translateX(-50%);
 }
-.contact .maxwidth{/*later weg*/
-    min-width: 100%;
-}
 
 .containerc{
-    min-width: 15rem;
-    max-width: 80rem;
-    width: 80rem;
+    top: 13rem;
+    padding: 0.1rem;
+    width: 60rem;
     position: relative;
     margin: auto; 
-    padding: 10rem   ;
     /* overflow: hidden;   */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 7%;
     z-index: 0; /*Helps to not override other divs*/
 }
 .form{
@@ -920,13 +919,12 @@ textarea.input{
     opacity: 0.3;
 }
 .big-circle{
-    margin: 0px;
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 25rem;
+    height: 25rem;
     border-radius: 50%;
     background: linear-gradient(to bottom, rgb(38, 122, 248), rgb(24, 89, 185));
-    bottom: 68%;
+    bottom: 25rem;
     right: 51%;
     transform: translate(-40%, 38%);
     margin: 30px 90px;
@@ -955,7 +953,22 @@ textarea.input{
   footer span a:hover{
       text-decoration: underline;
   }
-
+  /* Height Website*/ 
+    .home .maxwidth{
+    padding: 0 0 5% 0;    
+    }
+    .about .maxwidth, 
+    .skills .maxwidth{
+    min-height: 100%;
+    padding: 0 0 1% 0;
+    }
+    .projects .maxwidth{
+    padding: 0 0 0% 0;
+    }
+    .contact .maxwidth{
+    padding: 0 0 15% 0;
+    }
+    
   /*Viewport section*/
     @viewport{
     zoom: 1.0;
@@ -968,57 +981,65 @@ textarea.input{
 
 
 /*responsive media query start*/
- @media (max-width: 1300px) {
-    /*Height Website*/ 
-    .home .maxwidth,
+ @media (max-width: 1200px) {
+   
+}
+
+/* Laptop */
+@media (max-width: 1200px) and (orientation: landscape) {
+   
+     /* .skills .skills-content .column{
+        width: calc(100% - 20px);
+    } */
+    .about .about-content .left{
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        position: relative; 
+        display:inline-block; 
+        padding: 5rem 0 0 0;
+        margin: auto;
+    }
+    .skills .carousel .card{
+        /* width: 100%;
+        height: 25rem;   */
+        /* padding: 5% 5% 80% 5%; */
+    }
+     .containerc{
+        width: 55rem;
+        top: 5rem;
+        padding: 0.1rem;
+    }
+    .big-circle{
+        display: none;
+    }
+    footer{
+        padding: 1.3rem 2rem;
+    }
+    .hpimg{  
+        margin:-70% 0 0 82%;
+    }
+}
+
+@media (max-width: 960px) {
+     /*Height Website*/     
+    .home .maxwidth{
+        min-height: 100%;
+        padding: 0 0 5% 0;
+    }
     .about .maxwidth, 
     .projects .maxwidth, 
     .skills .maxwidth,
     .contact .maxwidth{
     min-height: 100%;
     padding: 0 0 20% 0;
-    }
-
-}
-
-@media (max-width: 1025px) and (orientation: landscape) {
-   
-    /* .about .about-content .left img{
-        height:350px;
-        width: 350px;
-    } */
-    .skills .skills-content .column{
-        width: calc(100% - 20px);
-    }
-     .containerc{
-        height:100px;
-        width: 400px;
-        margin: 1px;
-        top: -100px;
-    }
-    .s-b-container{       
-        width: 120%;
-        height: 10%;
-        margin: 1%; 
-    }
-  
-
-}
-
-@media (max-width: 960px) {
-    .scrollupbtn{
-        display: none;
-    }
-    .home .maxwidth{
-        min-height: 100%;
-        padding: 0 0 20% 0;
-    }
+    } 
     #logo{
         margin: 0% -70%;
     }
     /*Maxwidth Responsive*/
     .contact .maxwidth{
-        min-width: 95%;
+        min-width: 90%;
     }
     .projects .maxwidth{
         min-width: 90%;
@@ -1031,7 +1052,7 @@ textarea.input{
     } 
     .menu-btn{
         display: block;
-        margin: 0% -10%;
+        margin: 0% -15%;
     }
     .menu-btn i.active:before{
         content: "\f00d";
@@ -1059,7 +1080,6 @@ textarea.input{
         font-size: 25px;
     }
    
-
     .about .about-content .column{
         width: 100%;
     }
@@ -1072,11 +1092,6 @@ textarea.input{
     .form{
         grid-template-columns: 1fr;
     }
-
-
-
-
-
 
     section{
         padding: 2rem 1rem;
@@ -1094,149 +1109,13 @@ textarea.input{
         font-size: 23px;
         margin: 195% 3%;
     }
-    .home-content{
-        margin: 105% -2%;
-        line-height: 1.1;
-    }
-    .home .home-content .text-1{
-        font-size: 14px;
-        margin-left: 2%;
-    }
-    .home .home-content .text-2{
-        font-size: 55px;      
-    }
-    .home .home-content .text-3{
-        font-size: 15px;
-    }
-    .typing{
-        position: relative;
-        font-size: 20px;
-        margin-left: 4%;
-        color: rgb(69, 151, 245);
-        text-shadow: 2px 2px 3px  rgb(69, 151, 245);
-    }
-    .hpimg{  
-        display: none;
-    }
-    .hpimg1{  
-        object-fit: none;/*quality img*/
-        display: block;
-        position: relative;
-        height: 100%;
-        margin: -385% 10%;
-    }
-    form, .contct-info{
-        padding: 10% 10%;
-    }
-    
-    .contct-info .titlec {
-        text-align: center;
-    }
-    .about .about-content .right .text {
-        font-size: 25px;
-        font-weight: 600;
-        margin-bottom: -5%;
-        text-align: center;
-    }
-    /* .buttonb{
-        margin-top: 0%;
-        padding: max(1vh, 0.7rem);
-        position: absolute; 
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between;     
-    } */
-    .icon1{
-        width: 32px;
-    }
-    .input{
-        padding: 0.45rem 1.2rem;
-    }
-    .btn{
-        padding: 0.45rem 1.2rem;
-    } 
-    .about .about-content .right{
-        position: relative;
-    }
-    .about .about-content .left img{
-        min-height: 10vh;
-        align-items: center;
-    }
-    .s-box{
-        width: 150px;
-        height: 200px;
-        margin: 25px;
-        position: relative;
-    }
-    .s-b-container{
-        margin: -100px;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 1px 1px;
-        margin-top: 10px;
-    }
-    .skills .carousel .card{
-        background:  linear-gradient(0.25turn, rgb(15, 69, 131), rgba(3, 67, 162, 0.879), rgb(15, 69, 131));
-        min-height: 20vh;
-        min-width: 15vw;
-        max-width: 70vw;
-        width: 40vw;
-        height: 45vh;      
-        /* padding: 5% 5% 80% 5%; */
-        margin-top: 10vh;
-    }
-    .box p{
-        width: 100%;
-        padding: 0 1% 10%; 
-    }
-    
-    .containerc{  
-        position: relative;
-        padding: 7%; 
-        top: 10px;
-        z-index: 0; /*Helps to not override other divs */
-        margin: -10%;
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between; 
-     }
-    .contct-info::before{
-        display: none;
-    }
-    .big-circle{
-        display: none;
-    }
-    footer{
-        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));;
-        padding: 2% 2%;
-        text-align: center;
-        color: #f2f2f2;
-        /* z-index: 999; */
-    }
-}
-
-@media all and (max-width: 768px) {
-    .split > * {
-        flex-basis:100% ;
-    }
-    .split{
-        padding: max(0.5vh, 0.1rem);
-    }
-
-    #logo{
-        margin: 0% -60%;
-    }
-    .menu-btn{
-        margin: 0% -10%;
-    }
-   
     .social .icon{
         left: 0%;      
         margin: 10% 3%;
         animation: none;
     }
     .home-content{
-        margin: auto 0%;
+        margin: 20% 0%;
         line-height: 1.1;
         width: 100%;
     }
@@ -1266,29 +1145,31 @@ textarea.input{
         display: none;
     }
     .hpimg1{  
-        object-fit: cover;/*quality img*/
-        display: block;
-        position: relative;
-        margin: 3vh 5vw;
+        display: flex;
+        margin: 10% auto;
     }
-
+    form, .contct-info{
+        padding: 10% 10%;
+    }
+    
+    .contct-info .titlec {
+        text-align: center;
+    }
     .about .about-content .right .text {
         font-size: 25px;
         font-weight: 600;
-        margin-bottom: auto;
+        margin-bottom: 1%;
         text-align: center;
     }
     /* .buttonb{
-        padding: max(0.1vh, 0.5rem);  
-        position: relative; 
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between;   
-        display: block;  
         margin: auto;
     } */
+    .buttonb{
+        padding: max(0.1vh, 0.5rem);
+        margin: 5% 41%;
+    }
     .icon1{
-        width: 30px;
+        width: 32px;
     }
     .input{
         padding: 0.45rem 1.2rem;
@@ -1300,43 +1181,38 @@ textarea.input{
         position: relative;
     }
     .about .about-content .left img{
-        align-items: center;
+        margin: auto; 
+        display: flex;
     }
-    .s-b-text{
-        display: none;
+    .s-box{
+        width: 15rem;
+        height: 20rem;
+        margin: 3rem;
+        position: relative;
     }
-    .s-b-container{     
+
+    .s-b-container{
+        margin: -100px;
         display: grid;
-        grid-template-columns: auto 40% auto 40%;
-        margin-top: 10vh;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 1px 1px;
+        margin-top: 10px;
     }
-    .s-b-img img{
+    .skills .carousel .card{
+        /* width: 15rem;
+        height: 25rem;   */
+        /* padding: 5% 5% 80% 5%; */
+        max-width: 25rem;
+    }
+    .box p{
         width: 100%;
-        height: 25vh;
-        object-fit: cover;
+        padding: 0 1% 10%; 
     }
     
-    .skills .carousel .card {
-        margin-top: 20%; 
-        width: 100%;
-
-    }
-
-    form, .contct-info{
-        padding: 10% 10%;
-    }
-    .contct-info .titlec {
-        text-align: center;
-    }
     .containerc{  
-        position: relative;
-        padding: 15%; 
-        top: 10px;
-        z-index: 0; /*Helps to not override other divs */
-        margin: -10%;
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between;
+        width: 40rem;
+        top: 5rem;
+        padding: 0.1rem;
      }
     .contct-info::before{
         display: none;
@@ -1344,10 +1220,31 @@ textarea.input{
     .big-circle{
         display: none;
     }
-} 
-
-@media all and (max-width: 480px) {
+    footer{
+        background: linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));;
+        padding: 2% 2%;
+        text-align: center;
+        color: #f2f2f2;
+        /* z-index: 999; */
+    }
+}
+/* Laptop */
+@media all and (max-width: 768px) {
     
+    .home .maxwidth{
+        min-height: 100%;
+        padding: 0 0 20% 0;
+    }
+    .about .maxwidth, 
+    .projects .maxwidth, 
+    .skills .maxwidth,
+    .contact .maxwidth{
+    min-height: 100%;
+    padding: 0 0 50% 0;
+    } 
+   .scrollupbtn{
+       display: none;
+   }
     .split > * {
         flex-basis:100% ;
     }
@@ -1356,10 +1253,10 @@ textarea.input{
     }
 
     #logo{
-        margin: 0% -30%;
+        margin: 0% -60%;
     }
     .menu-btn{
-        margin: 0% -10%;
+        margin: 0% -13%;
     }
    
     .social .icon{
@@ -1397,41 +1294,129 @@ textarea.input{
     .hpimg{  
         display: none;
     }
-    .hpimg1{  
-        object-fit: cover;/*quality img*/
+    /* .hpimg1{  
         display: block;
-        position: relative;
-        margin: 3vh 5vw;
-    }
-
+    } */
+/* 
     .about .about-content .right .text {
         font-size: 25px;
         font-weight: 600;
         margin-bottom: auto;
         text-align: center;
+    } */
+    .icon1{
+        width: 30px;
     }
+    .input{
+        padding: 0.45rem 1.2rem;
+    }
+    .btn{
+        padding: 0.45rem 1.2rem;
+    } 
+    .about .about-content .right{
+        position: relative;
+    }
+     .buttonb{
+        margin: 5% 37%;
+    }
+    .s-box{
+        width: 15rem;
+        height: 20rem;
+        margin: 1rem;
+        position: relative;
+    }
+    .s-b-container{     
+        display: grid;
+        margin-top: 10vh;
+    }
+    .s-b-img img{
+        width: 100%;
+        height: 25vh;
+        object-fit: cover;
+    }
+    
+    .skills .carousel .card {
+        /* margin-top: 15%; 
+        width: 17rem;
+        height: 25rem;   */
+    }
+
+    form, .contct-info{
+        padding: 10% 10%;
+    }
+    .contct-info .titlec {
+        text-align: center;
+    }
+    .containerc{ 
+        top: 10px;
+        width: 30rem;
+        padding: 0.1rem;
+     }
+    .contct-info::before{
+        display: none;
+    }
+    .big-circle{
+        display: none;
+    }
+    footer{
+        padding: 1.3rem 2rem;
+    }
+} 
+
+@media all and (max-width: 500px) {
+    
+    .split > * {
+        flex-basis:100% ;
+    }
+    .split{
+        padding: max(0.5vh, 0.1rem);
+    }
+
+    #logo{
+        margin: 0% -30%;
+    }   
+    .menu-btn{
+        margin: 0% -10%;
+    }
+    /* .hpimg1{  
+        
+    } */
+
+    /* .about .about-content .right .text {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: auto;
+        text-align: center;
+    } */
     .buttonb{
-        padding: max(0.1vh, 0.5rem);
-        margin: 0.5rem 4.5rem;
+        margin: 5% 32%;
     }
+    /* .buttonb{
+        padding: max(0.1vh, 0.5rem);
+        margin: 5% 30%;
+    } */
     /* .about .about-content .right{
         position: relative;
     } */
-    .about .about-content .left img{
-        align-items: center;
-        margin: 0 auto 5% -5%; 
-        display: flex;
-        justify-content: center;  
+
+    .s-b-text{
+        display: none;
     }
     .s-box{
-        margin: 8% 1%;
+        width: 10rem;
+        height: 13rem;
+        position: relative;
     }
     .s-b-container{     
         display: grid;
         grid-template-columns: auto 35% auto auto;
         margin-top: 5vh;
     }
-
+    .skills .carousel .card {
+        /* margin-top: 15%; 
+        width: 17rem;
+        height: 25rem;   */
+    }
     .icon1{
         width: 30px;
     }
@@ -1449,14 +1434,9 @@ textarea.input{
         text-align: center;
     }
     .containerc{  
-        position: relative;
-        padding: 0 6% 0 6%; 
+        width: 22rem;
         top: 10px;
-        z-index: 0; /*Helps to not override other divs */
-        min-height: auto;
-        align-items: center;
-        justify-content: space-between; 
-        width: 25rem;
+        padding: 0.1rem;
      }
     .contct-info::before{
         display: none;
@@ -1464,6 +1444,9 @@ textarea.input{
 
     .big-circle{
         display: none;
+    }
+    footer{
+        padding: 1.2rem 0.5rem;
     }
  
 } 

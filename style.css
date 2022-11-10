@@ -953,7 +953,7 @@ textarea.input{
   footer span a:hover{
       text-decoration: underline;
   }
-  /* Height Website*/ 
+  /* Height/Width Website*/ 
     .home .maxwidth{
     padding: 0 0 5% 0;    
     }
@@ -967,7 +967,9 @@ textarea.input{
     }
     .contact .maxwidth{
     padding: 0 0 15% 0;
+    min-width: 100%;
     }
+
     
   /*Viewport section*/
     @viewport{
@@ -1039,7 +1041,7 @@ textarea.input{
     }
     /*Maxwidth Responsive*/
     .contact .maxwidth{
-        min-width: 90%;
+        min-width: 100%;
     }
     .projects .maxwidth{
         min-width: 90%;
@@ -1213,6 +1215,8 @@ textarea.input{
         width: 40rem;
         top: 5rem;
         padding: 0.1rem;
+        margin: auto;
+        position: flex;
      }
     .contct-info::before{
         display: none;
@@ -1436,7 +1440,10 @@ textarea.input{
     .containerc{  
         width: 22rem;
         top: 10px;
-        padding: 0.1rem;
+        padding: 0.5rem;
+         margin: auto;
+        display: block;
+        left: auto;
      }
     .contct-info::before{
         display: none;

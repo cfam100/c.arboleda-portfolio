@@ -1431,7 +1431,9 @@ textarea.input{
 } 
 
 @media all and (max-width: 500px) {
-    
+    .open-popup{
+        top: 70%;
+    }
     .split > * {
         flex-basis:100% ;
     }

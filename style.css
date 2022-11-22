@@ -11,6 +11,50 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+.popup{
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 10;/*To overlay another div*/
+}
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
 h1, h2, h3{
     font-family: 'ubuntu', sans-serif;
     font-weight: 900;
@@ -18,7 +62,7 @@ h1, h2, h3{
 }
 
 p{
-    font-size: 18px;
+    font-size: 16px;
 } 
 
 /* h1, h2, h3, p{
@@ -50,9 +94,9 @@ html, body{
 
 /* navbar styling */
 .navbar{
-    max-height: 7vh;
     position: fixed;
-    min-width: 100%;
+    /* min-width: 100%; */
+    width: 100%;
     z-index: 999;
     padding: 1.2vh; 
     font-family: 'ubuntu', sans-serif;
@@ -60,7 +104,7 @@ html, body{
     margin: auto auto auto;
 }
 .navbar.sticky {
-    max-height: 7vh;
+    min-height: 6vh;
     padding: 1.2vh; 
     background:  linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));
 }
@@ -72,6 +116,22 @@ html, body{
     margin: auto 14%;
 }
 
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+    margin: auto;
+}
+.navbar .menu li a{
+    display: block; /*returns navbar back when clicked */
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 1.5vw;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: rgb(75, 213, 255);
+}
 /* menu btn styling */
 .menu-btn{
     color: whitesmoke;
@@ -119,39 +179,6 @@ html, body{
     pointer-events: auto;
 }
 
-.navbar{
-    max-height: 7vh;
-    position: fixed;
-    min-width: 100%;
-    z-index: 999;
-    padding: 1.2vh; 
-    font-family: 'ubuntu', sans-serif;
-    transition: all 0.3 ease;
-    margin: auto auto auto;
-}
-.navbar.sticky {
-    max-height: 7vh;
-    padding: 1.2vh; 
-    background:  linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));
-}
-
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
-    margin: auto;
-}
-.navbar .menu li a{
-    display: block; /*returns navbar back when clicked */
-    color: whitesmoke;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 1.5vw;
-    transition: color 0.3s ease;
-}
-.navbar .menu li a:hover{
-    color: rgb(75, 213, 255);
-}
-
 #logo {
     position: relative;
     display: inline-block;
@@ -168,15 +195,15 @@ html, body{
     height: 100vh;
 }
 .home .maxwidth{
-    margin: auto 0 auto 20px;
-    min-height: 100%;
+    margin: auto 0 auto -4rem;
+    width: 100%;
 }
 .hpimg{  
     object-fit: cover;/*quality img*/
     position: relative;
     /* margin: -5% auto auto 100%; */
     top: 0;
-    left: 100%;
+    left: 70%;
     filter: drop-shadow(8px 8px 4px black);/*Shadow around whole img*/
 }
 .hpimg1{
@@ -245,7 +272,7 @@ html, body{
     display: inline-block;
     animation: float 5s ease-in-out infinite;
     position: relative;
-    margin: 0 3%;
+    margin: 0 2%;
     top: -2rem;
     color: whitesmoke;
     font-size: 30px;
@@ -484,6 +511,10 @@ section{
     background: whitesmoke;
     transform: translateX(-50%);
 }
+.subtext{
+    text-align: center;
+    margin: 3rem;
+}
 
 .s-box{
     background-color: rgb(15, 69, 131);
@@ -528,7 +559,6 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 3% 10% 3% 2%;
 }
 .s-b-text a{
@@ -989,10 +1019,10 @@ textarea.input{
 /*responsive media query start*/
 @media (max-width: 1416px){
     .hpimg{  
-        top:-6rem;
+        top:0%;
     }
     .social .icon{
-       top:-8rem;
+       top:-2rem;
     }
 }
 
@@ -1003,10 +1033,12 @@ textarea.input{
      /* .skills .skills-content .column{
         width: calc(100% - 20px);
     } */
- 
-    .icon{
-        margin: 0rem 3%;
+    .hpimg{  
+        top:-5rem;
     }
+    .social .icon{
+        top:-7rem;
+     }
     .about .about-content .left{
         width: 50%;
         justify-content: center;
@@ -1042,7 +1074,7 @@ textarea.input{
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 960px){
      /*Height Website*/     
     .home .maxwidth{
         min-height: 100%;
@@ -1078,12 +1110,13 @@ textarea.input{
     .menu-btn i.active:before{
         content: "\f00d";
     }
+    
     .navbar .menu{
         position: fixed;
         height: 100vh;
         width: 100%;
         left: -100%;
-        top: 0;     
+        top: 10%;     
         background: linear-gradient(rgb(3, 39, 80), rgb(61, 124, 182));
         text-align: center;
         transition: all 0.8s ease;
@@ -1126,12 +1159,12 @@ textarea.input{
    
     .social .icon{
         top: 1rem;
-        left: -1rem;
+        left: -1.5rem;
         animation: none;
         font-size: 23px;
     }
     .home-content{
-        margin: 20% 0%;
+        margin: 15% 12%;
         line-height: 1.1;
         width: 100%;
     }
@@ -1163,7 +1196,7 @@ textarea.input{
     }
     .hpimg1{  
         display: flex;
-        margin: 0% 0% 0% 60%;
+        margin: 1% 0% 0% 50%;
     }
     form, .contct-info{
         padding: 10% 10%;
@@ -1225,6 +1258,7 @@ textarea.input{
         /* width: 15rem;
         height: 25rem;   */
         /* padding: 5% 5% 80% 5%; */
+        margin: auto;
         max-width: 25rem;
     }
     .box p{
@@ -1286,11 +1320,11 @@ textarea.input{
    
     .social .icon{
         top: 1rem;
-        left: -0.5rem;
+        left: -1rem;
         font-size: 23px;
     }
     .home-content{
-        margin: 20% 0%;
+        margin: 15% 15%;
         line-height: 1.1;
         width: 100%;
     }
@@ -1320,7 +1354,7 @@ textarea.input{
     }
     .hpimg1{  
         display: flex;
-        margin: 10% 0% 0% 40%;
+        margin: 8% 0% 0% 30%;
     }
 /* 
     .about .about-content .right .text {
@@ -1358,6 +1392,12 @@ textarea.input{
         width: 100%;
         height: 25vh;
         object-fit: cover;
+    }
+    .s-b-text{
+        padding: 11% 10% 3% 2%;
+    }
+    .subtext{
+        margin: 2rem 0%;
     }
     
     .skills .carousel .card {
@@ -1407,11 +1447,12 @@ textarea.input{
     }
     .hpimg1{  
         display: flex;
-        margin: 30% auto;
-        width: 100%;
+        margin: 15% auto;
+        height: 100%;
+        max-height: 27rem; 
     }
     .home-content{
-        margin: 20% 0%;
+        margin: 15% 20%;
         line-height: 1.1;
         width: 100%;
     }
@@ -1426,22 +1467,10 @@ textarea.input{
         font-size: 18px;
         line-height: 1.1;
     }
-    /* .about .about-content .right .text {
-        font-size: 25px;
-        font-weight: 600;
-        margin-bottom: auto;
-        text-align: center;
-    } */
-    /* .buttonb{
-        margin: 5% 32%;
-    } */
-    /* .buttonb{
-        padding: max(1.1vh, 0.5rem);
-        margin: 50% 30%;
-    } */
-    /* .about .about-content .right{
-        position: relative;
-    } */
+    .social .icon{
+        top: 1rem;
+        left: -0.7rem;
+    }
     .about .about-content .left img{
         display: flex;
         width: 100%;
@@ -1462,11 +1491,6 @@ textarea.input{
         grid-template-columns: auto 35% auto auto;
         margin-top: 5vh;
     }
-    .skills .carousel .card {
-        /* margin-top: 15%; 
-        width: 17rem;
-        height: 25rem;   */
-    }
     .icon1{
         width: 30px;
     }
@@ -1486,7 +1510,7 @@ textarea.input{
     .containerc{  
         width: 100%;
         top: 10px;
-        padding: 0.5rem;
+        padding: .1rem;
         margin: auto;
      }
     .contct-info::before{

@@ -54,24 +54,6 @@
        $('.menu-btn i').toggleClass("active");
     })});
 
-    // Contact form script\\
-    const inputs = document.querySelectorAll(".input");//selects form input
-
-    function focusFunc(){
-        let parent = this.parentNode;
-        parent.classList.add("focus");
-    }
-    function blurFunc(){
-        let parent = this.parentNode;
-        if(this.value == ""){ //if input value is empty stay removed
-            parent.classList.remove("focus");
-        }
-    }
-    inputs.forEach(input =>{
-        input.addEventListener("focus", focusFunc);
-        input.addEventListener("blur", blurFunc);
-    })
-
     //Owl carousel script\\
     $('.carousel').owlCarousel({
         margin: 20,
@@ -93,7 +75,32 @@
             }
         }
     });
-//current year footer\\
-const year = document.querySelector('#current-year')
-year.innerHTML = new Date().getFullYear()
+    //current year footer\\
+    const year = document.querySelector('#current-year')
+    year.innerHTML = new Date().getFullYear()
 
+    // Contact form script\\
+    const inputs = document.querySelectorAll(".input");//selects form input
+
+    function focusFunc(){
+        let parent = this.parentNode;
+        parent.classList.add("focus");
+    }
+    function blurFunc(){
+        let parent = this.parentNode;
+        if(this.value == ""){ //if input value is empty stay removed
+            parent.classList.remove("focus");
+        }
+    }
+    inputs.forEach(input =>{
+        input.addEventListener("focus", focusFunc);
+        input.addEventListener("blur", blurFunc);
+    })
+    // document.getElementById('myForm').addEventListener('btn', openPopup)
+    let popup = document.getElementById("popup");
+    function openPopup(){
+        popup.classList.add("open-popup")
+    }
+    function closePopup(){
+        popup.classList.remove("open-popup")
+    }

@@ -30,7 +30,7 @@
     </div> -->
     <a href="#" class="scrollupbtn">
         <i class="fas fa-angle-up"></i>
-    </button>
+    </a>
     <!--navbar section -->
     <nav class="navbar">
         <div class="maxwidth">
@@ -57,7 +57,11 @@
                     <div class= "text-1"> Hello, My name is </div>
                     <div class= "text-2">Cristian Arboleda</div>
                     <div class= "text-3">I'm a Developer with experience in:</br><span class="typing"></span></div>
-                    <img src="images/bmhp2.png" alt="" class="hpimg">
+                    <div class="img-container">
+                        <img src="images/bmhp2.png" alt="" class="hpimg">
+                        <img src="images/bmhp1.png" alt="" class="hpimg1">
+                    </div>
+                    <!-- <img src="images/bmhp2.png" alt="" class="hpimg"> -->
 
                         <!-- social media -->
                         <div class="social">
@@ -66,7 +70,7 @@
                             <a href="https://www.instagram.com/cfam100/" target="_blank"><i class="fab fa-instagram icon"></i></a>
                             <a href="https://www.linkedin.com/in/cristian-arboleda-b41266158/" target="_blank"><i class="fab fa-linkedin icon"></i></a>
                         </div>
-                        <img src="images/bmhp1.png" alt="" class="hpimg1">
+                        <!-- <img src="images/bmhp1.png" alt="" class="hpimg1"> -->
                 </div>                  
             </div>              
         </div>    
@@ -76,7 +80,7 @@
     <section class="about" id="about">
         <div class="maxwidth">
             <div class="split">
-                <h2 class="title">About me</h2>
+                <h2 class="title">About Me</h2>
                 <div class="about-content">
                     <div class="column left">
                         <div>
@@ -91,14 +95,18 @@
                  
                     <div class="column right">
                         <div class="text">Fullstack <span class="dev">Developer</span></div>
-                            <p> Writing code for my is like going in my own world, there I can use all my creativity in this extended world of lenguages. 
-                                Since I was a child I loved to draw and being envolved creating elements. Now this days I do the same, but in a modern way with CODE!!>.
-                                My ambition is to become a senior Fullstack developer and make my own professional websites and application from scratch for big companies. 
-                                This is why I keep working on my programming skills to bring it to the next level and be able to accept every challenge.
-                                At the moment I work as a .NET developer at HTM, this is a public transport company of the Hague region in the Netherlands. My tasks at HTM are to develop
-                                changes in the applications like URS(Hour registration system), Visconti(multifunctional application for all employees) and more.
-                                I also have experiece as .NET developer with winForms, API's and consoleapplications. In my free time I use to work on my Front-end skills like
-                                HTML, CSS, Javascript, React, etc. Go to the work experience page, if you want to know more about my work experieces. 
+                            <p> Programming feels like entering my own world, where I can unleash my creativity in this vast realm of languages. 
+                                Since childhood, I have had a passion for drawing and creating elements, 
+                                and now I have found a modern way to express that through code! My ultimate goal is to become a senior Fullstack developer, 
+                                crafting professional websites and applications from scratch for major companies.
+                                Currently, I am working as a .NET developer at HTM, a prominent public transport company in the Hague region, 
+                                Netherlands. My role involves developing enhancements for applications such as URS (Hour registration system), 
+                                Visconti (a multifunctional application for all employees), and more. I have gained expertise in .NET development, 
+                                including winForms, API development, and console applications.
+
+                                In my free time, I devote myself to enhancing my front-end skills, including HTML, CSS, JavaScript, and React. Building on my work experiences, 
+                                I am constantly pushing my programming skills to the next level, eagerly embracing new challenges.                             
+                                If you'd like to learn more about my work experiences, please visit the <a href="#projects">Work Experience</a> page.
                             </p>
                     </div>
                 </div>
@@ -109,12 +117,16 @@
     <section class="projects" id="projects">
         <div class="maxwidth">
             <div class="split">
-                <h2 class="title">My projects</h2>
+                <h2 class="title">Work Experience</h2>
                 <h3 class="subtitle">All projects will be able soon!!!</h3>
-                <p class="subtext">My purpose is to remaster all this projects I have ever built before, I will be updating them 1 by 1.</p>
-                <div class="s-b-container">
+                <p class="subtext">My purpose is to remaster all the projects I have previously built. With a focus on continuous improvement, 
+                    I am dedicated to updating and refining each project one by one. By revisiting and enhancing these projects, 
+                    I aim to showcase my growth as a developer and apply the latest industry standards. 
+                    I address any limitations, improve performance, and optimize the user experience.</p>
+                <!-- <div class="s-b-container reveal" id = "projectContainer"> -->
+                    <div class="s-b-container reveal">
                      <a href="#"> <!-- target="_blank" -->
-                        <div class="s-box">
+                        <div class="s-box" onclick="highlightProject(this)">
                             <div class="s-b-img">
                                 <div class="s-type">Tablet4U</div>
                                 <img src="images/t4you.png">
@@ -125,7 +137,7 @@
                         </div>
                     </a>
                     <a href="#">
-                        <div class="s-box">
+                        <div class="s-box" onclick="highlightProject(this)">
                             <div class="s-b-img">
                                 <div class="s-type">Portfolio</div>
                                 <img src="images/portfolio.png">
@@ -136,7 +148,7 @@
                         </div>
                     </a>
                     <a href="#">
-                        <div class="s-box">
+                        <div class="s-box" onclick="highlightProject(this)">
                             <div class="s-b-img">
                                 <div class="s-type">Yamba</div>
                                 <img src="images/YAMBAlogo.jpg">
@@ -147,7 +159,7 @@
                         </div>
                     </a>
                     <a href="#">
-                        <div class="s-box">
+                        <div class="s-box" onclick="highlightProject(this)">
                             <div class="s-b-img">
                                 <div class="s-type">TicTacToe</div>
                                 <img src="images/ttt.png">
@@ -158,7 +170,7 @@
                         </div>
                     </a>
                     <a href="#">
-                        <div class="s-box">
+                        <div class="s-box" onclick="highlightProject(this)">
                             <div class="s-b-img">
                                 <div class="s-type">RaceGame</div>
                                 <img src="images/race.jpg">
@@ -169,7 +181,7 @@
                         </div>
                     </a>
                     <a href="#">
-                        <div class="s-box">
+                        <div class="s-box" onclick="highlightProject(this)">
                             <div class="s-b-img">
                                 <div class="s-type">TextEditor</div>
                                 <img src="images/texteditor.jpg">
@@ -180,7 +192,7 @@
                         </div>
                     </a>
                     <a href="#">
-                        <div class="s-box">
+                        <div class="s-box" onclick="highlightProject(this)">
                             <div class="s-b-img">
                                 <div class="s-type">System</div>
                                 <img src="images/texteditor.jpg">
@@ -190,14 +202,14 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#">
-                        <div class="s-box">
+                    <a href="AVGProject-1.html" target="_blank">
+                        <div class="s-box" onclick="highlightProject(this)">
                             <div class="s-b-img">
-                                <div class="s-type">Ramdom</div>
-                                <img src="images/texteditor.jpg">
+                                <div class="s-type">AVG Project</div>
+                                <img src="images/lock.png">
                             </div>
                             <div class="s-b-text">
-                                <a>This one will be a application build with React</a>
+                                <a>The task, in broad terms, was to apply GDPR (General Data Protection Regulation) to this system.</a>
                             </div>
                         </div>
                     </a>
@@ -211,8 +223,9 @@
                 <div class="split">
                     <h2 class="title">My Skills</h2>
                         <h3 class="subtitle">All technologies used:</h3>
-                <p class="subtext">At this carousel you can find every programming language I have experience with. Swipe to the left/right to see more.</p>
-                    <div class="carousel owl-carousel">
+                <p class="subtext">Welcome to the carousel showcasing my extensive experience with various programming languages. 
+                    Swipe left or right to explore the breadth of my expertise.</p>
+                    <div class="carousel owl-carousel reveal">
                         <div class="card">
                             <div class="box">
                                 <img src="images/html.png" alt="HtmlImg">
@@ -281,14 +294,14 @@
             <div class="maxwidth">
                 <div class="split">
 
-                    <h2 class="title">Contact me</h2>
-                        <div class="containerc">
+                    <h2 class="title">Contact</h2>
+                        <div class="containerc reveal">
                             <span class="big-circle"></span>
                             <div class="form">
                                 <div class="contct-info">
                                     <h3 class="titlec">Let's get in touch</h3>
                                     <p class="text">
-                                        If you have any question about my website or projects, just hit me up. I will answer as soon as possible.
+                                        Feel free to contact me with any questions about my website or projects, and I'll respond promptly.
                                     </p>
                                     <div class="info">
                                         <div class="information">
@@ -334,7 +347,7 @@
                                         <button class="btn" onclick="openPopup()">Send</button>
                                         <!-- <input type="submit" value="Subscribe" onclick="myFunction1()"> -->
 
-                                        <input type="hidden" name="_next" value="https://cfam100.github.io/c.arboleda-portfolio/">  <!--  change value in site -->
+                                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html#contact">  <!--  change value in site -->
                                         <input type="hidden" name="_captcha" value="false">
                                     </form>
                                 </div>

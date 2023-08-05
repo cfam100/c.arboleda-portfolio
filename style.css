@@ -82,6 +82,7 @@ html, body{
 
 .split{
     padding: max(3vh, 1.5rem);
+    position: relative;
 }
 
 .maxwidth{
@@ -132,6 +133,48 @@ html, body{
 .navbar .menu li a:hover{
     color: rgb(75, 213, 255);
 }
+/* Navbar1 */
+.navbar1{
+    position: fixed;
+    /* min-width: 100%; */
+    width: 100%;
+    z-index: 999;
+    padding: 1.2vh; 
+    font-family: 'ubuntu', sans-serif;
+    transition: all 0.3 ease;
+    margin: auto auto auto;
+    background:  linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));
+}
+/* .navbar1.sticky {
+    min-height: 6vh;
+    padding: 1.2vh; 
+    background:  linear-gradient(0.25turn,  rgb(0, 36, 70), rgb(5, 37, 85), rgb(0, 36, 70));
+} */
+
+.navbar1 .maxwidth{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto 14%;
+}
+
+.navbar1 .menu1 li{
+    list-style: none;
+    display: inline-block;
+    margin: auto;
+}
+.navbar1 .menu1 li a{
+    display: block; /*returns navbar back when clicked */
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 1.5vw;
+    transition: color 0.3s ease;
+}
+.navbar1 .menu1 li a:hover{
+    color: rgb(75, 213, 255);
+}
+
 /* menu btn styling */
 .menu-btn{
     color: whitesmoke;
@@ -192,22 +235,24 @@ html, body{
     background: linear-gradient(rgb(3, 39, 80), rgba(61, 123, 182, 0.856));/*This code gets filled with the statement cover(down below)*/
     color: whitesmoke; 
     font-family: 'ubuntu', sans-serif;
-    height: 100vh;
+    /* position:relative */
 }
 .home .maxwidth{
-    margin: auto 0 auto -4rem;
     width: 100%;
+    position: relative;
+    /* max-height: 8%; */
 }
 .hpimg{  
     object-fit: cover;/*quality img*/
     position: relative;
     /* margin: -5% auto auto 100%; */
-    top: -8rem;
-    left: 70%;
+    top: 3rem;
+    left: 65%;
     max-height: 25rem;
     height: 100%;
     filter: drop-shadow(8px 8px 4px black);/*Shadow around whole img*/
 }
+
 .hpimg1{
     object-fit: cover;/*quality img*/
     position: relative;
@@ -216,7 +261,7 @@ html, body{
 }
 
 .home-content{
-    margin:5rem 17%;
+    margin:5rem 17% -10rem;
     line-height: 1;
     width: 80%;
 }
@@ -273,7 +318,7 @@ html, body{
     animation: float 5s ease-in-out infinite;
     position: relative;
     margin: 0 2%;
-    top: -10rem;
+    bottom: 0rem;
     color: whitesmoke;
     font-size: 30px;
     overflow: auto;
@@ -329,6 +374,7 @@ section{
 .container--narrow{
     max-width: 70rem;  
 }
+  
 .about, .projects, .skills, .contact, .footer{
    font-family: 'Poppins', sans-serif; 
 }
@@ -374,8 +420,47 @@ section{
     background: whitesmoke;
     transform: translateX(-50%);
 }
+/* Projects edit section style */
 
-/* about section styling*/
+#projectAVG {
+    text-align: justify;
+    min-height: 100%;
+    padding: 1% 0 8%;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+.containerAVG {
+    margin: 5rem auto; /* Center the container horizontally */
+    max-width: 960px; 
+    padding: 0 10rem; /* Add some padding to the container */
+}
+.containerAVG h1{
+    margin: 0 0;
+    text-align: center;
+}
+.containerAVG p{
+    margin: 2rem auto;
+}
+.imgAVG p{
+    margin: 0 auto;
+}
+
+.imgAVG {
+    margin: 0 auto; /* Center the image and text within the div */
+    max-width: 100%;
+}
+
+.imgAVG img {
+    max-width: 100%;
+    min-height: 20rem;
+
+    /* min-height: 10rem; */
+    object-fit: cover;/*quality img*/
+    /* position: relative; */
+}
+  
+/* About section styling*/
 section{
     padding: 100px 0;
 }
@@ -479,7 +564,7 @@ section{
     -webkit-box-reflect: below 0px linear-gradient
     (transparent, #0002);
 }
-/*projects section styling*/
+/*Work Experience section styling*/
 
 .projects .title{
     position: relative;
@@ -515,7 +600,11 @@ section{
     text-align: center;
     margin: 3rem;
 }
-
+.projects .subtext, .skills .subtext{
+    text-align: justify;
+    margin: 3rem 13rem;
+}
+ 
 .s-box{
     background-color: rgb(15, 69, 131);
     /* max-width: 12rem; */
@@ -532,8 +621,12 @@ section{
     transform: translateY(-10px);
     transition: all ease 0.3ms;
     box-shadow:  0 0 40px 15px rgb(0, 87, 187);
-
 }
+.s-box.highlight {
+    z-index: 1;
+    /* Add styles to highlight the project box */
+  }
+  
 .s-b-container{
     justify-content: center;
     align-items: center;
@@ -544,7 +637,43 @@ section{
     margin: auto ;
     display: grid;
     grid-template-columns: auto 40% auto auto;
+    /* opacity: 0;
+    transition: opacity 7s; */
 }
+
+.reveal{
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+/*.hide {
+    opacity:0;
+    left:-100%;
+}
+.s-b-container .show {
+    opacity:1;
+    left:0;
+} */
+/* .s-b-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 5% 0;
+    opacity: 0;
+    transition: opacity 10s;
+  } */
+  
+  .s-b-container.show {
+    opacity: 1;
+  }
 .s-b-img{
     width: 100%;
     height: 65%;
@@ -592,7 +721,6 @@ section{
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 3px rgb(255, 255, 255);
 }
-
 
 /* Skills section styling */
 .skills .title{
@@ -979,6 +1107,10 @@ textarea.input{
     padding: 0.9% 2%;
     text-align: center;
     color: #f2f2f2;
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
   }
   footer span a{
       color: rgb(32, 185, 255);
@@ -1017,41 +1149,37 @@ textarea.input{
 
 
 /*responsive media query start*/
-@media (max-width: 1416px){
- 
+@media (max-width: 1432px){
+
+    .projects .subtext, .skills .subtext{
+        text-align: justify;
+        margin: 0 0;
+    }
     .home .home-content .text-2{
         font-size: 80px;    
         width: 100%;  
     }
-    .hpimg{  
-        top:-8rem;
-        height: 100%;
-        max-height: 25rem;
-    }
-    .social .icon{
-       top:-10rem;
-    }
+    
 }
 
 
 /* Laptop */
 @media (max-width: 1200px) and (orientation: landscape) {
-   
+    .projects .subtext, .skills .subtext{
+        text-align: justify;
+        margin: 3rem auto;
+    }
      /* .skills .skills-content .column{
         width: calc(100% - 20px);
     } */
+    .home-content{
+        margin:5rem 17% -10rem;
+    }
     .home .home-content .text-2{
         font-size: 68px;    
         width: 100%;  
     }
-    .hpimg{  
-        top:-7rem;
-        height: 100%;
-        max-height: 25rem;
-    }
-    .social .icon{
-        top:-9rem;
-     }
+    
     .about .about-content .left{
         width: 50%;
         justify-content: center;
@@ -1093,6 +1221,10 @@ textarea.input{
         min-height: 100%;
         padding: 0 0 5% 0;
     }
+    .projects .subtext, .skills .subtext{
+        text-align: justify;
+        margin: 3rem auto;
+    }
     .about .maxwidth, 
     .projects .maxwidth, 
     .skills .maxwidth,
@@ -1129,12 +1261,13 @@ textarea.input{
         height: 100vh;
         width: 100%;
         left: -100%;
-        top: 10%;     
+        top: 0%;     
         background: linear-gradient(rgb(3, 39, 80), rgb(61, 124, 182));
         text-align: center;
         transition: all 0.8s ease;
     }
     .navbar .menu.active{
+        display: block;
         left: 0;
     }
     .navbar .menu li{
@@ -1142,6 +1275,31 @@ textarea.input{
         margin: 7% auto;
     }
     .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    
+    /* Non activated Navbar */
+    .navbar1 .menu1{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0%;     
+        background: linear-gradient(rgb(3, 39, 80), rgb(61, 124, 182));
+        text-align: center;
+        transition: all 0.8s ease;
+    }
+    .navbar1 .menu1.active{
+        /* display: block; */
+        left: 0;
+    }
+    .navbar1 .menu1 li{
+        display: block;
+        margin: 7% auto;
+    }
+    .navbar1 .menu1 li a{
         display: inline-block;
         margin: 20px 0;
         font-size: 25px;
@@ -1171,13 +1329,13 @@ textarea.input{
     }
    
     .social .icon{
-        top: 1rem;
+        top: 7rem;
         left: -1.5rem;
         animation: none;
         font-size: 23px;
     }
     .home-content{
-        margin: 15% 12%;
+        margin: 15% 5%;
         line-height: 1.1;
         width: 100%;
     }
@@ -1209,10 +1367,15 @@ textarea.input{
     }
     .hpimg1{  
         display: flex;
-        margin: -10% 50%;
+        margin: 0 50%;
         height: 100%;
         max-height: 25rem;
     }
+    .img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     form, .contct-info{
         padding: 10% 10%;
     }
@@ -1334,12 +1497,12 @@ textarea.input{
     }
    
     .social .icon{
-        top: 1rem;
+        top: 5rem;
         left: -1rem;
         font-size: 23px;
     }
     .home-content{
-        margin: 15% 15%;
+        margin: 15% 10%;
         line-height: 1.1;
         width: 100%;
     }
@@ -1372,13 +1535,7 @@ textarea.input{
         height: 100%;
         max-height: 23rem; 
     }
-/* 
-    .about .about-content .right .text {
-        font-size: 25px;
-        font-weight: 600;
-        margin-bottom: auto;
-        text-align: center;
-    } */
+
     .icon1{
         width: 30px;
     }
@@ -1391,9 +1548,31 @@ textarea.input{
     .about .about-content .right{
         position: relative;
     }
-     /* .buttonb{
-        margin: 5% 37%;
-    } */
+    
+    /* AVG page */
+    .containerAVG {
+        margin: 7rem auto; /* Center the container horizontally */
+        max-width: 100%;
+        padding: 0 2rem;/* Add some padding to the container */
+    }
+   
+    .containerAVG p{
+        margin: 2rem auto; /* Center the <p> text horizontally */
+        text-align: justify;
+    }
+    .imgAVG p{
+        margin: 0 auto;
+    }
+    
+    .imgAVG {
+        margin: 0 auto; /* Center the image and text within the div */
+        max-width: 100%;
+    }
+    
+    .imgAVG img {
+        max-width: 100%;
+        height: 20rem;
+    }
     .s-box{
         width: 14rem;
         height: 18rem;
@@ -1414,12 +1593,6 @@ textarea.input{
     }
     .subtext{
         margin: 2rem 0%;
-    }
-    
-    .skills .carousel .card {
-        /* margin-top: 15%; 
-        width: 17rem;
-        height: 25rem;   */
     }
 
     form, .contct-info{
@@ -1467,7 +1640,7 @@ textarea.input{
         margin: 15% auto;
     }
     .home-content{
-        margin: 15% 20%;
+        margin: 15% 5%;
         line-height: 1.1;
         width: 100%;
     }
@@ -1492,6 +1665,30 @@ textarea.input{
         height: 100%;
         max-height: 18rem; 
         max-width: 18rem;
+    }
+    /* AVG page */
+    .containerAVG {
+        margin: 7rem auto; /* Center the container horizontally */
+        max-width: 100%;
+        padding: 0 2rem;/* Add some padding to the container */
+    }
+   
+    .containerAVG p{
+        margin: 2rem auto; /* Center the <p> text horizontally */
+        text-align: justify;
+    }
+    .imgAVG p{
+        margin: 0 auto;
+    }
+    
+    .imgAVG {
+        margin: 0 auto; /* Center the image and text within the div */
+        max-width: 100%;
+    }
+    
+    .imgAVG img {
+        max-width: 100%;
+        height: 10rem;
     }
     .s-b-text{
         display: none;

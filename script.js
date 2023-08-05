@@ -5,7 +5,7 @@
                 $('.navbar').addClass("sticky");
             }else{
                 $('.navbar').removeClass("sticky");
-            }
+            }            
             if(this.scroll > 500){
                 $('.scroll-up-btn').addClass("show");
             }
@@ -13,6 +13,19 @@
                 $('.scroll-up-btn').removeClass("show");  
             }
         });
+    
+          // toggle menu/navbar script\\
+    $('.menu-btn').click(function(){
+        $('.navbar .menu, navbar1 .menu1').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+     })});
+
+     $(document).ready(function(){
+        $('.menu-btn').click(function(){
+            $('.navbar1 .menu1').toggleClass("active");
+            $('.menu-btn i').toggleClass("active");
+        });
+    });
 
     //scroll up button\\
     const toTop = document.querySelector(".scrollupbtn");
@@ -27,7 +40,7 @@
     })
 
     //Typing animation script\\
-        const texts = ["C#", "HTML", "CSS", "Javascript", "SQL", "React", "Wordpress"];
+        const texts = [".NET", "SQL", "HTML", "CSS", "Javascript", "Mendix"];
         let count = 0;
         let index = 0;//Checks every single char
         let currentText = "";//here gets text saved who is coming from const text
@@ -47,12 +60,7 @@
             }
             setTimeout(type, 300);
         })();
-        
-    // toggle menu/navbar script\\
-    $('.menu-btn').click(function(){
-       $('.navbar .menu').toggleClass("active");
-       $('.menu-btn i').toggleClass("active");
-    })});
+
 
     //Owl carousel script\\
     $('.carousel').owlCarousel({
@@ -96,11 +104,97 @@
         input.addEventListener("focus", focusFunc);
         input.addEventListener("blur", blurFunc);
     })
-    // document.getElementById('myForm').addEventListener('btn', openPopup)
     let popup = document.getElementById("popup");
-    function openPopup(){
-        popup.classList.add("open-popup")
+
+    function openPopup() {
+        // Check if all input fields are filled
+        const inputs = document.querySelectorAll(".input");
+        let isValid = true;
+      
+        inputs.forEach((input) => {
+          if (input.value.trim() === "") {
+            isValid = false;
+            let parent = input.parentNode;
+            parent.classList.add("error");
+          }
+        });
+         // Check if email field is valid
+        const emailInput = document.querySelector('input[name="email"]');
+        const emailValue = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(emailValue)) {
+            isValid = false;
+            let parent = emailInput.parentNode;
+            parent.classList.add("error");
+        }
+      
+        if (isValid) {
+          // Display the popup
+          let popup = document.getElementById("popup");
+          popup.classList.add("open-popup");
+          setTimeout(function() {
+            window.location.href = "http://127.0.0.1:5500/index.html#contact";
+        }, 3000); 
+        }
     }
     function closePopup(){
         popup.classList.remove("open-popup")
     }
+
+    // myID = document.getElementById("projectContainer");
+
+    // var myScrollFunc = function () {
+    //     var y = window.scrollY;
+    //     if (y >= 500) {
+    //         myID.className = "s-b-container show"
+    //     } else {
+    //         myID.className = "s-b-container hide"
+    //     }
+    // };
+    
+    //Reveal objects\\
+    // window.addEventListener("scroll", myScrollFunc);
+//     var myID = document.getElementById("projectContainer");
+
+//     var myScrollFunc = function () {
+//     var y = window.scrollY;
+//     if (y >= 800) {
+//         myID.classList.add("show");
+//     } else {
+//         myID.classList.remove("show");
+//     }
+//     };
+//     window.addEventListener("scroll", myScrollFunc);
+
+
+//    function highlightProject(event) {
+//   event.preventDefault(); 
+
+//   const projectBoxes = document.querySelectorAll('.s-box');
+//   projectBoxes.forEach(box => box.classList.remove('highlight'));
+
+//   const clickedBox = event.currentTarget;
+//   clickedBox.classList.add('highlight');
+// }
+
+window.addEventListener('scroll', reveal);
+
+    function reveal(){
+        var reveals = document.querySelectorAll('.reveal');
+
+        for (var i = 0; i < reveals.length; i++) {
+
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+            var revealpoint = 100;
+
+            if(revealtop < windowheight - revealpoint){
+                reveals[i].classList.add('active');
+            }
+            else{
+                reveals[i].classList.remove('active');
+            }
+            
+        }
+    }  

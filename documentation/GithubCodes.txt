@@ -9,3 +9,10 @@ git add .
 git commit -m "file added "
 
 git push
+
+
+pull the changes from the remote "main" branch to your local "main" branch:
+git pull origin main
+
+Once you have pulled the changes and resolved any conflicts, you can now push your local branch to the remote repository:
+git push origin main

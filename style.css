@@ -235,20 +235,22 @@ html, body{
     background: linear-gradient(rgb(3, 39, 80), rgba(61, 123, 182, 0.856));/*This code gets filled with the statement cover(down below)*/
     color: whitesmoke; 
     font-family: 'ubuntu', sans-serif;
+    height: 100%;
+    min-height: 100vh; 
     /* position:relative */
 }
 .home .maxwidth{
     width: 100%;
     position: relative;
-    /* max-height: 8%; */
+    padding: 0 0 9% 0;    
 }
 .hpimg{  
     object-fit: cover;/*quality img*/
     position: relative;
-    /* margin: -5% auto auto 100%; */
-    top: 3rem;
+    margin: 0 auto;
+    /* top: 3rem; */
     left: 65%;
-    max-height: 25rem;
+    max-height: 20rem;
     height: 100%;
     filter: drop-shadow(8px 8px 4px black);/*Shadow around whole img*/
 }
@@ -261,7 +263,7 @@ html, body{
 }
 
 .home-content{
-    margin:5rem 17% -10rem;
+    margin: 5% 17% -10rem;
     line-height: 1;
     width: 80%;
 }
@@ -318,7 +320,7 @@ html, body{
     animation: float 5s ease-in-out infinite;
     position: relative;
     margin: 0 2%;
-    bottom: 0rem;
+    bottom: 2rem; 
     color: whitesmoke;
     font-size: 30px;
     overflow: auto;
@@ -1121,7 +1123,6 @@ textarea.input{
   }
   /* Height/Width Website*/ 
     .home .maxwidth{
-    padding: 0 0 5% 0;    
     }
     .about .maxwidth, 
     .skills .maxwidth{
@@ -1159,6 +1160,7 @@ textarea.input{
         font-size: 80px;    
         width: 100%;  
     }
+    
     
 }
 

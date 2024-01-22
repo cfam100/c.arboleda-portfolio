@@ -441,6 +441,10 @@ section{
     margin: 0 0;
     text-align: center;
 }
+.containerAVG h3{
+    margin: 2rem 0;
+    text-align: center;
+}
 .containerAVG p{
     margin: 2rem auto;
 }

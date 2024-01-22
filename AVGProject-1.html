@@ -55,17 +55,26 @@
     <section id="projectAVG">
         <div class="containerAVG">
             <h1>AVG Project</h1>
-            <p>At the HTM office we use an application to handle and manage official reports (proces-verbally). 
-                Additionally, this application has multiple functions that I won't mention here. 
-                The task, in broad terms, was to apply GDPR (General Data Protection Regulation) to this system.
-                Within this task, it includes anonymizing official reports in the database that are older than 5 years. 
-                Furthermore, documents linked to a report should be deleted as well.
-                This application runs on a scheduler every day at a specific time.
+            <p>Visconti is an application used to process and manage official reports, in addition to offering multiple functions such as service processing, 
+                data handling, and BRP (Basic Registry of Persons) checks, among others. The primary task was to implement GDPR compliance within the system.
+                This task involved anonymizing official reports in the database that are older than five years and removing any documents linked to these reports. 
+                The objective was to retrieve PDF documents associated with an official report, and then delete these files if they exist. 
+                Furthermore, all official reports older than five years are required to be removed from the system.
             </p>
             <div class="imgAVG">
                 <p>This is an example of the console application log</p>
                 <!-- Afb verwijderen aanpassen!!!!! -->
                 <img src="images/AVG.png">
+            </div>
+            <h3>Anonimisation</h3>
+            <p>The image illustrates the result of the automated data anonymization process, which is part of the console application. 
+                This application is configured to run daily at a predetermined time via a task scheduler, ensuring continuous compliance with GDPR regulations. 
+                It systematically redacts sensitive information, substituting personal identifiers such as names, gender, birthplaces, and addresses with 'XXXX' placeholders. 
+                This safeguarding measure is essential for protecting individual privacy while retaining the structural integrity of the data for ongoing analysis.
+            </p>
+            <div class="imgAVG">
+                <!-- Afb verwijderen aanpassen!!!!! -->
+                <img src="images/AVGProject_Anonimisation.png">
             </div>
         </div>
     </section>
